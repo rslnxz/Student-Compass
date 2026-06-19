@@ -1,0 +1,17 @@
+{
+  "name": "Student Compass",
+  "short_name": "Compass",
+  "description": "SAT, APUSH, GPA, university planning, and U.S. school system support.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#050914",
+  "theme_color": "#08070a",
+  "icons": [
+    {
+      "src": "assets/compass-logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

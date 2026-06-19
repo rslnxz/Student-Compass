@@ -1,0 +1,2241 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https: wss:;" http-equiv="Content-Security-Policy"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<meta content="#08070a" name="theme-color"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="Student Compass" name="apple-mobile-web-app-title"/>
+<meta content="Student Compass - simple SAT, APUSH, and school support for students learning the U.S. system" name="description"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23050a18'/%3E%3Ccircle cx='32' cy='32' r='23' fill='none' stroke='%233b82f6' stroke-width='3'/%3E%3Cpath d='M32 9l7 23 16 7-23 7-7 16-7-23-16-7 23-7z' fill='%23f59e0b'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23e8edf5'/%3E%3C/svg%3E" rel="icon" type="image/svg+xml"/>
+<link rel="manifest" href="manifest.json"/>
+<title>Student Compass</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&amp;family=Crimson+Text:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&amp;family=Crimson+Pro:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+
+
+<!-- Firebase -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- BOOTCAMP THEME OVERRIDE - applied site-wide, after all base styles -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+<!-- CSS-only wave lines background -->
+
+<div aria-hidden="true" class="pro-ambient-compass">
+<div class="pro-compass-stage">
+<div class="pro-compass-disc">
+<svg class="pro-compass-svg" fill="none" viewbox="0 0 400 400">
+<circle cx="200" cy="200" r="154" stroke="rgba(190,206,255,.26)" stroke-width="1.4"></circle>
+<circle cx="200" cy="200" r="118" stroke="rgba(109,93,252,.24)" stroke-width="1"></circle>
+<g stroke="rgba(142,171,255,.34)" stroke-linecap="round" stroke-width="2">
+<path d="M200 35v38M200 327v38M35 200h38M327 200h38"></path>
+<path d="M84 84l27 27M289 289l27 27M316 84l-27 27M111 289l-27 27" opacity=".62"></path>
+</g>
+<path d="M200 78l22 97 96 25-96 25-22 97-22-97-96-25 96-25 22-97Z" fill="url(#needleGlow)" stroke="rgba(226,235,255,.35)" stroke-width="1.2"></path>
+<circle cx="200" cy="200" fill="rgba(5,7,19,.82)" r="18" stroke="rgba(226,235,255,.32)"></circle>
+<text fill="rgba(226,235,255,.62)" font-family="Georgia" font-size="18" text-anchor="middle" x="200" y="62">N</text>
+<text fill="rgba(226,235,255,.36)" font-family="Georgia" font-size="14" text-anchor="middle" x="200" y="352">S</text>
+<text fill="rgba(226,235,255,.36)" font-family="Georgia" font-size="14" text-anchor="middle" x="52" y="206">W</text>
+<text fill="rgba(226,235,255,.36)" font-family="Georgia" font-size="14" text-anchor="middle" x="348" y="206">E</text>
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="needleGlow" x1="100" x2="310" y1="92" y2="312">
+<stop stop-color="#dce9ff" stop-opacity=".86"></stop>
+<stop offset=".38" stop-color="#3b82f6" stop-opacity=".54"></stop>
+<stop offset="1" stop-color="#6d5dfc" stop-opacity=".58"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div aria-hidden="true" class="pro-compass-core"></div>
+<div class="pro-compass-shine"></div>
+</div>
+</div>
+</div>
+
+
+<div id="app">
+<div id="install-banner">
+<p><strong>Install Student Compass</strong><br/>Add to your home screen</p>
+<div class="install-actions">
+<button class="btn-install" onclick="doInstall()">Install</button>
+<button class="btn-dismiss" onclick="dismissInstall()">X</button>
+</div>
+</div>
+<header>
+<div class="logo" onclick="goHome()" style="cursor:pointer">
+<img alt="" aria-hidden="true" class="logo-mark" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23050a18'/%3E%3Ccircle cx='32' cy='32' r='23' fill='none' stroke='%233b82f6' stroke-width='3'/%3E%3Cpath d='M32 9l7 23 16 7-23 7-7 16-7-23-16-7 23-7z' fill='%23f59e0b'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23e8edf5'/%3E%3C/svg%3E"/>
+<div>
+<div class="logo-name">Student Compass</div>
+<div class="logo-sub">SAT - AP - College Guide</div>
+</div>
+</div>
+<nav class="top-main-nav" aria-label="Main sections">
+<button class="top-nav-link active" id="top-nav-home" onclick="goHome();closeMenu()">Home</button>
+<button class="top-nav-link" id="top-nav-sat" onclick="showSAT();closeMenu()">SAT</button>
+<button class="top-nav-link" id="top-nav-apush" onclick="show('s-start');setNav('nav-quiz');closeMenu()">APUSH</button>
+<button class="top-nav-link" id="top-nav-gpa" onclick="openToolPage('s-gpa','nav-gpa');closeMenu()">GPA</button>
+<button class="top-nav-link" id="top-nav-college" onclick="showCollegeFit();closeMenu()">Universities</button>
+<button class="top-nav-link" id="top-nav-school" onclick="openToolPage('s-school','nav-school');closeMenu()">School System</button>
+<button class="top-nav-link" id="top-nav-profile" onclick="showProgressCenter();closeMenu()">Profile</button>
+</nav>
+<div style="display:flex;align-items:center;gap:10px">
+<button class="nav-btn top-free-pill" onclick="showPurpose();closeMenu()" style="display:inline-flex;align-items:center;gap:6px" title="Free for every student"><span>FREE FOR EVERY STUDENT</span></button>
+<button class="nav-btn top-sat-cta" onclick="showSAT();closeMenu()" style="display:inline-flex;align-items:center;gap:6px" title="Start SAT Practice"><span>Start SAT Practice</span></button>
+<button aria-label="Menu" class="hamburger menu-visible-icon" id="hamburger-btn" onclick="toggleMenu()">
+<span></span><span></span><span></span></button>
+</div>
+</header>
+<div aria-live="polite" id="tool-page-root"></div>
+<!-- Slide-out drawer -->
+<div class="drawer-overlay" id="drawer-overlay" onclick="closeMenu()"></div>
+<nav class="drawer" id="nav-drawer">
+<div class="drawer-header">
+<img alt="" aria-hidden="true" class="logo-mark" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23050a18'/%3E%3Ccircle cx='32' cy='32' r='23' fill='none' stroke='%233b82f6' stroke-width='3'/%3E%3Cpath d='M32 9l7 23 16 7-23 7-7 16-7-23-16-7 23-7z' fill='%23f59e0b'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23e8edf5'/%3E%3C/svg%3E"/>
+<span class="logo-name" style="font-size:15px">Student Compass</span>
+<button class="drawer-close" onclick="closeMenu()">X</button>
+</div>
+<div class="drawer-links">
+<div class="drawer-section-label">Main</div>
+<button class="drawer-btn active" id="nav-landing" onclick="goHome();closeMenu()">Home</button>
+<button class="drawer-btn" id="nav-purpose" onclick="showPurpose();closeMenu()">Purpose</button>
+<button class="drawer-btn" id="nav-feedback" onclick="showFeedback();closeMenu()">Comments &amp; Feedback</button>
+<div class="drawer-section-label">How America Works</div>
+<button class="drawer-btn" id="nav-school" onclick="openToolPage('s-school','nav-school');closeMenu()">School System</button>
+<button class="drawer-btn" id="nav-gpa" onclick="openToolPage('s-gpa','nav-gpa');closeMenu()">GPA &amp; Courses</button>
+<button class="drawer-btn" id="nav-college" onclick="openToolPage('s-college','nav-college');closeMenu()">University Selection</button>
+<div class="drawer-section-label">SAT Practice</div>
+<button class="drawer-btn" id="nav-sat" onclick="showSAT();closeMenu()">SAT Practice</button>
+<button class="drawer-btn sub-item" id="nav-pt" onclick="showSATTab('pt');show('s-sat');setNav('nav-pt');closeMenu()">Practice Test</button>
+<button class="drawer-btn sub-item" id="nav-drills" onclick="showSATTab('drills');show('s-sat');setNav('nav-drills');closeMenu()">Strategy Drills</button>
+<button class="drawer-btn sub-item" id="nav-fc" onclick="openToolPage('s-fc','nav-fc');closeMenu()">Vocabulary</button>
+<div class="drawer-section-label">APUSH Practice</div>
+<button class="drawer-btn" id="nav-quiz" onclick="show('s-start');setNav('nav-quiz');closeMenu()">APUSH Practice</button>
+<button class="drawer-btn sub-item" id="nav-timeline" onclick="showTimeline();closeMenu()">Timeline</button>
+<button class="drawer-btn sub-item" id="nav-writing" onclick="show('s-writing');setNav('nav-writing');closeMenu()">Writing Practice</button>
+<div class="drawer-section-label">Progress</div>
+<button class="drawer-btn" id="nav-profile" onclick="showProfile();closeMenu()">Profile Dashboard</button>
+<button class="drawer-btn" id="nav-ach" onclick="showAchievements();closeMenu()">Achievements</button>
+</div>
+</nav>
+<!-- START -->
+<!-- LANDING PAGE -->
+<div class="sec on" id="s-landing">
+<!-- HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+<section class="bc-hero">
+<div aria-hidden="true" class="bc-grid-bg"></div>
+<div class="bc-hero-grid" style="position:relative;display:grid;grid-template-columns:1fr;gap:48px;align-items:start">
+<div>
+<!-- 3D Compass -->
+<div style="display:flex;justify-content:flex-start;margin-bottom:28px;animation:revealUp .5s ease both">
+<div class="compass-wrap">
+<svg class="compass-ring" height="180" viewbox="0 0 160 160" width="180">
+<circle cx="80" cy="80" fill="none" r="76" stroke="rgba(59,130,246,.45)" stroke-width="2"></circle>
+<circle cx="80" cy="80" fill="rgba(59,130,246,.04)" r="70" stroke="rgba(59,130,246,.18)" stroke-width="1"></circle>
+<g stroke="rgba(59,130,246,.5)" stroke-width="1.5">
+<line x1="80" x2="80" y1="6" y2="18"></line>
+<line x1="80" x2="80" y1="142" y2="154"></line>
+<line x1="6" x2="18" y1="80" y2="80"></line>
+<line x1="142" x2="154" y1="80" y2="80"></line>
+</g>
+<g stroke="rgba(99,102,241,.35)" stroke-width="1">
+<line transform="rotate(45 80 80)" x1="80" x2="80" y1="8" y2="14"></line>
+<line transform="rotate(90 80 80)" x1="80" x2="80" y1="8" y2="14"></line>
+<line transform="rotate(135 80 80)" x1="80" x2="80" y1="8" y2="14"></line>
+<line transform="rotate(180 80 80)" x1="80" x2="80" y1="8" y2="14"></line>
+<line transform="rotate(225 80 80)" x1="80" x2="80" y1="8" y2="14"></line>
+<line transform="rotate(270 80 80)" x1="80" x2="80" y1="8" y2="14"></line>
+<line transform="rotate(315 80 80)" x1="80" x2="80" y1="8" y2="14"></line>
+</g>
+<text fill="#3b82f6" font-family="serif" font-size="11" font-weight="700" text-anchor="middle" x="80" y="28">N</text>
+<text fill="rgba(99,102,241,.7)" font-family="serif" font-size="10" text-anchor="middle" x="80" y="142">S</text>
+<text fill="rgba(99,102,241,.7)" font-family="serif" font-size="10" text-anchor="middle" x="18" y="84">W</text>
+<text fill="rgba(99,102,241,.7)" font-family="serif" font-size="10" text-anchor="middle" x="144" y="84">E</text>
+<g class="compass-needle">
+<polygon fill="#3b82f6" opacity=".95" points="80,30 84,80 80,90 76,80"></polygon>
+<polygon fill="rgba(99,102,241,.85)" points="80,90 84,80 80,128 76,80"></polygon>
+<circle cx="80" cy="80" fill="#08090f" r="5" stroke="rgba(59,130,246,.7)" stroke-width="1.5"></circle>
+</g>
+</svg>
+<div class="cube-inside-compass">
+<div class="cube-3d">
+<div class="cube-inner">
+<div class="cube-face face-front"></div>
+<div class="cube-face face-back"></div>
+<div class="cube-face face-left"></div>
+<div class="cube-face face-right"></div>
+<div class="cube-face face-top"></div>
+<div class="cube-face face-bottom"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<span class="bc-pill bc-pill-live">ENROLLMENT_OPEN <span style="color:rgba(230,233,242,.6)">[FREE / NO_LOGIN]</span></span>
+<h1 class="bc-h1">Stop Guessing,<br/><em style="font-style:italic">Start </em><span class="bc-text-gradient" style="font-style:italic">Studying.</span></h1>
+<p class="bc-lead">Student Compass is a focused operating system for the U.S. high-school path - SAT prep, APUSH mastery, GPA &amp; course planning, and the school-system guide international students actually need. Built clean. Built complete. Built today.</p>
+<div class="bc-cta-row">
+<button class="bc-btn bc-btn-primary" onclick="showSAT();closeMenu()">LAUNCH_SAT_ -&gt;</button>
+<button class="bc-btn bc-btn-ghost" onclick="show('s-start');setNav('nav-quiz');closeMenu()">EXPLORE_APUSH_</button>
+<span class="bc-label" style="padding-left:6px">FREE - IN-BROWSER - NO ACCOUNT</span>
+</div>
+</div>
+<!-- LIVE_STACK card -->
+<div class="bc-card" style="padding:24px;position:relative;max-width:520px">
+<span class="bc-tick tl"></span><span class="bc-tick tr"></span>
+<span class="bc-tick bl"></span><span class="bc-tick br"></span>
+<div class="bc-label">LIVE_STACK</div>
+<div class="bc-stack" style="margin-top:18px">
+<div><span>SAT_QUESTIONS</span><span>485</span></div>
+<div><span>APUSH_CARDS</span><span>300+</span></div>
+<div><span>GPA_TRACKER</span><span>LIVE</span></div>
+<div><span>SHIP_TIME</span><span>TODAY</span></div>
+</div>
+<div style="margin-top:22px;padding:16px;border:1px solid var(--border);background:rgba(255,255,255,.02);border-radius:3px">
+<div class="bc-label">COURSE_THESIS</div>
+<p style="font-family:'Source Serif 4',Georgia,serif;font-size:15px;line-height:1.6;color:var(--text);margin:8px 0 0">Studying isn't magic. It's a system. Compass turns scattered prep into a dependable daily loop - drills, flashcards, GPA, and the school context international students rarely get explained.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- CURRICULUM â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+<section class="bc-section" id="curriculum">
+<div class="bc-label">|CURRICULUM_</div>
+<h2 class="bc-h2" style="margin-top:8px">The <em class="bc-text-gradient" style="font-style:italic">modules</em>.</h2>
+<p class="bc-lead">Every page does one job. Pick a module, run the loop, repeat tomorrow.</p>
+<div style="margin-top:32px">
+<div class="bc-mod-row">
+<div class="bc-mod-num">M_01</div>
+<div>
+<h3 class="bc-mod-title">SAT Prep</h3>
+<p class="bc-mod-desc">Full practice tests, timed strategy drills, and a vocab flashcard deck. Built around the digital SAT format.</p>
+</div>
+<button class="bc-btn bc-btn-ghost" onclick="showSAT();closeMenu()">OPEN_</button>
+</div>
+<div class="bc-mod-row">
+<div class="bc-mod-num">M_02</div>
+<div>
+<h3 class="bc-mod-title">APUSH Practice</h3>
+<p class="bc-mod-desc">Stimulus-based questions across all 9 periods with detailed explanations for every answer.</p>
+</div>
+<button class="bc-btn bc-btn-ghost" onclick="show('s-start');setNav('nav-quiz');closeMenu()">OPEN_</button>
+</div>
+<div class="bc-mod-row">
+<div class="bc-mod-num">M_03</div>
+<div>
+<h3 class="bc-mod-title">Vocabulary Flashcards</h3>
+<p class="bc-mod-desc">A focused deck of high-yield SAT vocabulary. Flip, mark known, repeat.</p>
+</div>
+<button class="bc-btn bc-btn-ghost" onclick="openToolPage('s-fc','nav-fc');closeMenu()">OPEN_</button>
+</div>
+<div class="bc-mod-row">
+<div class="bc-mod-num">M_04</div>
+<div>
+<h3 class="bc-mod-title">GPA &amp; Course Planner</h3>
+<p class="bc-mod-desc">Calculate weighted/unweighted GPA, plan a balanced courseload, see how AP classes compound.</p>
+</div>
+<button class="bc-btn bc-btn-ghost" onclick="openToolPage('s-gpa','nav-gpa');closeMenu()">OPEN_</button>
+</div>
+<div class="bc-mod-row">
+<div class="bc-mod-num">M_05</div>
+<div>
+<h3 class="bc-mod-title">U.S. School System Guide</h3>
+<p class="bc-mod-desc">The orientation international students actually need - credits, transcripts, counselors, college list.</p>
+</div>
+<button class="bc-btn bc-btn-ghost" onclick="openToolPage('s-school','nav-school');closeMenu()">OPEN_</button>
+</div>
+<div class="bc-mod-row">
+<div class="bc-mod-num">M_06</div>
+<div>
+<h3 class="bc-mod-title">University Selection</h3>
+<p class="bc-mod-desc">Build a smart university list, learn what admissions readers value, and search U.S. schools by fit, cost, selectivity, and academic strengths.</p>
+</div>
+<button class="bc-btn bc-btn-ghost" onclick="openToolPage('s-college','nav-college');closeMenu()">OPEN_</button>
+</div>
+<div class="bc-mod-row">
+<div class="bc-mod-num">M_07</div>
+<div>
+<h3 class="bc-mod-title">Student Profile</h3>
+<p class="bc-mod-desc">One dashboard for your name, picture, college list, GPA, SAT score, and question accuracy across the app.</p>
+</div>
+<button class="bc-btn bc-btn-ghost" onclick="showProfile();closeMenu()">OPEN_</button>
+</div>
+</div>
+</section>
+<!-- FEATURES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+<section class="bc-section" id="features">
+<div class="bc-label">|WHY_</div>
+<h2 class="bc-h2" style="margin-top:8px">Built like a <em class="bc-text-gradient" style="font-style:italic">tool</em>, not a textbook.</h2>
+<div class="bc-feat-grid">
+<div class="bc-feat">
+<div class="bc-feat-icon"></div>
+<h3>Always know the next step</h3>
+<p>Every module surfaces the most useful action. No infinite syllabi, no scrolling to find what to do.</p>
+</div>
+<div class="bc-feat">
+<div class="bc-feat-icon"></div>
+<h3>Drill, don't graze</h3>
+<p>Short, focused practice sets that actually move the needle on SAT and APUSH scores.</p>
+</div>
+<div class="bc-feat">
+<div class="bc-feat-icon"></div>
+<h3>For international students</h3>
+<p>The American school system explained without assumptions - credits, GPA, transcripts, college path.</p>
+</div>
+<div class="bc-feat">
+<div class="bc-feat-icon"></div>
+<h3>No login required</h3>
+<p>Open the page. Use the tool. Progress saves locally. Free forever, works offline.</p>
+</div>
+</div>
+</section>
+<!-- RESULTS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+<section class="bc-section" id="results">
+<div class="bc-label">|SYSTEM_METRICS_</div>
+<h2 class="bc-h2" style="margin-top:8px">What's inside the <em class="bc-text-gradient" style="font-style:italic">Compass.</em></h2>
+<p class="bc-lead">Built to cover everything a high-school student navigating the U.S. system actually needs - without any filler.</p>
+<div class="bc-stats-grid">
+<div class="bc-stat-cell"><div class="bc-stat-num bc-text-gradient">366+</div><div class="bc-label" style="margin-top:12px">APUSH_QUESTIONS</div><p style="font-family:'Source Serif 4',Georgia,serif;font-size:14px;color:var(--muted);margin-top:4px">Across all 9 periods</p></div>
+<div class="bc-stat-cell"><div class="bc-stat-num bc-text-gradient">209</div><div class="bc-label" style="margin-top:12px">VOCAB_CARDS</div><p style="font-family:'Source Serif 4',Georgia,serif;font-size:14px;color:var(--muted);margin-top:4px">SAT words + word roots</p></div>
+<div class="bc-stat-cell"><div class="bc-stat-num bc-text-gradient">90+</div><div class="bc-label" style="margin-top:12px">ACHIEVEMENTS</div><p style="font-family:'Source Serif 4',Georgia,serif;font-size:14px;color:var(--muted);margin-top:4px">Milestone unlocks</p></div>
+<div class="bc-stat-cell"><div class="bc-stat-num bc-text-gradient">4</div><div class="bc-label" style="margin-top:12px">STUDY_MODULES</div><p style="font-family:'Source Serif 4',Georgia,serif;font-size:14px;color:var(--muted);margin-top:4px">Complete tools</p></div>
+</div>
+<div class="bc-outcomes-grid">
+<div class="bc-card bc-outcome-card">
+<span class="bc-tick bc-tl"></span><span class="bc-tick bc-br"></span>
+<div class="bc-outcome-top"><span class="bc-outcome-num bc-text-gradient">94%</span><div><div class="bc-label">Coverage</div><div class="bc-label" style="margin-top:2px">SAT_PREP</div></div></div>
+<p style="font-family:'Source Serif 4',Georgia,serif;font-size:14px;color:var(--muted);line-height:1.6;margin-top:16px">Questions span every tested SAT domain: vocabulary, grammar, evidence, rhetoric, algebra, advanced math, geometry, and data analysis.</p>
+</div>
+<div class="bc-card bc-outcome-card">
+<span class="bc-tick bc-tl"></span><span class="bc-tick bc-br"></span>
+<div class="bc-outcome-top"><span class="bc-outcome-num bc-text-gradient">9/9</span><div><div class="bc-label">Periods</div><div class="bc-label" style="margin-top:2px">APUSH_DEPTH</div></div></div>
+<p style="font-family:'Source Serif 4',Georgia,serif;font-size:14px;color:var(--muted);line-height:1.6;margin-top:16px">Full coverage from Period 1 (1491-1607) through Period 9 (1980-present) with stimulus-based questions and detailed explanations.</p>
+</div>
+<div class="bc-card bc-outcome-card">
+<span class="bc-tick bc-tl"></span><span class="bc-tick bc-br"></span>
+<div class="bc-outcome-top"><span class="bc-outcome-num bc-text-gradient">100%</span><div><div class="bc-label">Free</div><div class="bc-label" style="margin-top:2px">ZERO_COST</div></div></div>
+<p style="font-family:'Source Serif 4',Georgia,serif;font-size:14px;color:var(--muted);line-height:1.6;margin-top:16px">No account. No paywall. No ads. Progress saves locally in your browser. Optional sign-in syncs across devices.</p>
+</div>
+</div>
+</section>
+<!-- HOW IT WORKS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+<section class="bc-section" id="hiw">
+<div class="bc-label">|RUN_LOOP_</div>
+<h2 class="bc-h2" style="margin-top:8px">Three steps to get moving.</h2>
+<div class="bc-hiw-grid" style="margin-top:40px">
+<div class="bc-card bc-hiw-card">
+<span class="bc-tick bc-tl"></span><span class="bc-tick bc-br"></span>
+<div class="bc-mod-num">01</div>
+<h3 style="font-family:'Playfair Display',Georgia,serif;font-size:22px;font-weight:800;margin:16px 0 0">Open the Compass</h3>
+<p style="font-family:'Source Serif 4',Georgia,serif;color:var(--muted);font-size:15px;line-height:1.6;margin:12px 0 0">No signup. The full app loads in your browser - quizzes, flashcards, GPA, school guide.</p>
+</div>
+<div class="bc-card bc-hiw-card">
+<span class="bc-tick bc-tl"></span><span class="bc-tick bc-br"></span>
+<div class="bc-mod-num">02</div>
+<h3 style="font-family:'Playfair Display',Georgia,serif;font-size:22px;font-weight:800;margin:16px 0 0">Pick your track</h3>
+<p style="font-family:'Source Serif 4',Georgia,serif;color:var(--muted);font-size:15px;line-height:1.6;margin:12px 0 0">Jump into SAT drills, APUSH periods, GPA planning, or the U.S. school-system guide.</p>
+</div>
+<div class="bc-card bc-hiw-card">
+<span class="bc-tick bc-tl"></span><span class="bc-tick bc-br"></span>
+<div class="bc-mod-num">03</div>
+<h3 style="font-family:'Playfair Display',Georgia,serif;font-size:22px;font-weight:800;margin:16px 0 0">Build the streak</h3>
+<p style="font-family:'Source Serif 4',Georgia,serif;color:var(--muted);font-size:15px;line-height:1.6;margin:12px 0 0">Daily quiz loops + flashcards. Achievements track real mastery, not vanity metrics.</p>
+</div>
+</div>
+</section>
+<!-- FAQ â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+<section class="bc-section" id="faq">
+<div style="text-align:center;max-width:640px;margin:0 auto 48px">
+<div class="bc-label">|FAQ_</div>
+<h2 class="bc-h2" style="margin-top:8px">Common questions, <em class="bc-text-gradient" style="font-style:italic">direct answers.</em></h2>
+</div>
+<div class="bc-faq-wrap">
+<div class="bc-faq-item"><button class="bc-faq-btn" onclick="bcToggleFaq(this)"><span style="font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;line-height:1.35;text-align:left">Do I need an account to use Student Compass?</span><span class="bc-faq-plus">+</span></button><div class="bc-faq-body"><p>No. The full app works in your browser with zero sign-up. Progress, XP, and achievements are saved locally. If you create an optional account, your progress syncs across devices.</p></div></div>
+<div class="bc-faq-item"><button class="bc-faq-btn" onclick="bcToggleFaq(this)"><span style="font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;line-height:1.35;text-align:left">Is this actually free? What's the catch?</span><span class="bc-faq-plus">+</span></button><div class="bc-faq-body"><p>Completely free - no paywall, no ads, no data collection. It's a student-built tool. The only thing you pay is the time you put into studying.</p></div></div>
+<div class="bc-faq-item"><button class="bc-faq-btn" onclick="bcToggleFaq(this)"><span style="font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;line-height:1.35;text-align:left">What SAT content does the app cover?</span><span class="bc-faq-plus">+</span></button><div class="bc-faq-body"><p>The full digital SAT: Reading &amp; Writing (vocabulary in context, grammar, text structure, command of evidence, rhetorical synthesis) and Math (linear equations, advanced math, data analysis, geometry &amp; trig). 120+ drills per section plus a full adaptive practice test.</p></div></div>
+<div class="bc-faq-item"><button class="bc-faq-btn" onclick="bcToggleFaq(this)"><span style="font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;line-height:1.35;text-align:left">I'm an international student. Will the school system guide help me?</span><span class="bc-faq-plus">+</span></button><div class="bc-faq-body"><p>Yes - it was built specifically for students learning the U.S. system. It covers K-12 structure, class levels (Regular / Honors / AP / IB), credit systems, testing timelines, classroom culture, and what colleges actually look at.</p></div></div>
+<div class="bc-faq-item"><button class="bc-faq-btn" onclick="bcToggleFaq(this)"><span style="font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;line-height:1.35;text-align:left">How does the adaptive SAT practice test work?</span><span class="bc-faq-plus">+</span></button><div class="bc-faq-body"><p>Like the real digital SAT, Module 2 adapts based on your Module 1 performance. Score >=65% on Module 1 and you get a harder Module 2 with a higher score ceiling. Estimated section scores and a personalized study plan are generated at the end.</p></div></div>
+<div class="bc-faq-item"><button class="bc-faq-btn" onclick="bcToggleFaq(this)"><span style="font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;line-height:1.35;text-align:left">Can I use this on my phone?</span><span class="bc-faq-plus">+</span></button><div class="bc-faq-body"><p>Yes. The app is fully mobile-optimized and can be installed to your home screen as a PWA for offline use. Flashcard swipe gestures also work on touch screens.</p></div></div>
+</div>
+<div style="text-align:center;margin-top:48px">
+<p style="font-family:'Source Serif 4',Georgia,serif;color:var(--muted);margin-bottom:24px">Still have questions? The best way to answer them is to open the app.</p>
+<button class="bc-btn bc-btn-primary" onclick="showSAT();closeMenu()">LAUNCH_COMPASS_ -&gt;</button>
+</div>
+</section>
+<!-- FINAL CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+<section class="bc-section" id="run" style="text-align:center;padding:80px 0">
+<div aria-hidden="true" class="bc-grid-bg"></div>
+<div style="position:relative">
+<div class="bc-label">|RUN_</div>
+<h2 class="bc-h2" style="margin-top:14px">Start with one<br/><em class="bc-text-gradient" style="font-style:italic">clear action.</em></h2>
+<p class="bc-lead" style="margin-left:auto;margin-right:auto">Open the Compass and run one quiz. That's it. The system does the rest.</p>
+<div class="bc-cta-row" style="justify-content:center">
+<button class="bc-btn bc-btn-primary" onclick="showSAT();closeMenu()">SAT_PREP_ -&gt;</button>
+<button class="bc-btn bc-btn-ghost" onclick="show('s-start');setNav('nav-quiz');closeMenu()">APUSH_</button>
+<button class="bc-btn bc-btn-ghost" onclick="openToolPage('s-gpa','nav-gpa');closeMenu()">GPA_TOOL_</button>
+</div>
+</div>
+</section>
+</div>
+<div class="sec" id="s-start">
+<div class="bc-page-head">
+<div aria-hidden="true" class="bc-grid-bg"></div>
+<div class="bc-page-head-inner">
+<div>
+<span class="bc-label">|MODULE_02_ - APUSH</span>
+<h1>Know Your<br/><em>History.</em></h1>
+<p class="bc-page-sub">9 periods - stimulus-based questions - detailed explanations for every answer. Drill periods individually or run the full timeline.</p>
+<div class="bc-page-meta">
+<span class="bc-pill">9_PERIODS</span>
+<span class="bc-pill">200+_QUESTIONS</span>
+<span class="bc-pill">1491-&gt;PRESENT</span>
+</div>
+</div>
+<div class="bc-mini-orb"><svg style="width:100%;height:100%;overflow:visible" viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><defs><radialgradient cx="50%" cy="50%" id="bg-og-apush" r="50%"><stop offset="0%" stop-color="rgba(59,130,246,1)" stop-opacity="0.22"></stop><stop offset="100%" stop-color="transparent"></stop></radialgradient><radialgradient cx="32%" cy="28%" id="gl-og-apush" r="72%"><stop offset="0%" stop-color="rgba(59,130,246,1)" stop-opacity="0.14"></stop><stop offset="100%" stop-color="rgba(4,7,18,0.97)"></stop></radialgradient></defs><circle cx="100" cy="100" fill="url(#bg-og-apush)" r="94"></circle><circle cx="100" cy="100" fill="url(#gl-og-apush)" r="90" stroke="rgba(59,130,246,1)" stroke-opacity="0.35" stroke-width="1.5"></circle><ellipse cx="76" cy="60" fill="rgba(255,255,255,0.04)" rx="40" ry="22" transform="rotate(-18 76 60)"></ellipse><ellipse cx="102" cy="162" fill="rgba(0,0,0,0.38)" rx="52" ry="9"></ellipse><path d="M97,48 Q68,43 44,58 L44,152 Q68,146 97,150Z" fill="rgba(25,50,130,0.55)" stroke="rgba(59,130,246,0.45)" stroke-width="1.2"></path><path d="M103,48 Q132,43 156,58 L156,152 Q132,146 103,150Z" fill="rgba(59,130,246,0.13)" stroke="rgba(59,130,246,0.5)" stroke-width="1.2"></path><rect fill="rgba(147,197,253,0.82)" height="104" rx="3" stroke="rgba(255,255,255,0.18)" stroke-width="0.5" width="12" x="94" y="46"></rect><rect fill="rgba(255,255,255,0.28)" height="104" rx="2" width="4" x="95" y="46"></rect><line stroke="rgba(147,197,253,0.6)" stroke-linecap="round" stroke-width="2.2" x1="56" x2="88" y1="76" y2="76"></line><line stroke="rgba(147,197,253,0.38)" stroke-linecap="round" stroke-width="1.5" x1="56" x2="88" y1="91" y2="91"></line><line stroke="rgba(147,197,253,0.38)" stroke-linecap="round" stroke-width="1.5" x1="56" x2="88" y1="106" y2="106"></line><line stroke="rgba(147,197,253,0.22)" stroke-linecap="round" stroke-width="1.2" x1="56" x2="76" y1="121" y2="121"></line><line stroke="rgba(147,197,253,0.6)" stroke-linecap="round" stroke-width="2.2" x1="112" x2="144" y1="76" y2="76"></line><line stroke="rgba(147,197,253,0.38)" stroke-linecap="round" stroke-width="1.5" x1="112" x2="144" y1="91" y2="91"></line><line stroke="rgba(147,197,253,0.38)" stroke-linecap="round" stroke-width="1.5" x1="112" x2="144" y1="106" y2="106"></line><line stroke="rgba(147,197,253,0.22)" stroke-linecap="round" stroke-width="1.2" x1="112" x2="132" y1="121" y2="121"></line><path d="M44,58 Q68,51 97,48 Q103,47 103,48 Q132,43 156,58" fill="none" stroke="rgba(147,197,253,0.7)" stroke-width="2.2"></path></svg></div>
+</div>
+</div>
+<!-- Quick stats bar -->
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px">
+<div style="text-align:center;padding:14px;background:rgba(255,255,255,.03);border:1px solid rgba(59,130,246,.14);border-radius:10px;animation:revealUp .6s ease both">
+<div style="font-family:'Playfair Display',serif;font-size:26px;font-weight:900;color:var(--purple)">9</div>
+<div style="font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-top:2px">Periods</div>
+</div>
+<div style="text-align:center;padding:14px;background:rgba(255,255,255,.03);border:1px solid rgba(59,130,246,.14);border-radius:10px;animation:revealUp .6s .1s ease both">
+<div id="apush-q-count" style="font-family:'Playfair Display',serif;font-size:26px;font-weight:900;color:var(--purple)">200+</div>
+<div style="font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-top:2px">Questions</div>
+</div>
+<div style="text-align:center;padding:14px;background:rgba(255,255,255,.03);border:1px solid rgba(59,130,246,.14);border-radius:10px;animation:revealUp .6s .2s ease both">
+<div style="font-family:'Playfair Display',serif;font-size:26px;font-weight:900;color:var(--purple)">1491</div>
+<div style="font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-top:2px">to Present</div>
+</div>
+</div>
+<!-- Visual era timeline -->
+<div class="card reveal" style="margin-bottom:14px">
+<div class="card-title">American History at a Glance</div>
+<div style="position:relative;height:44px;background:rgba(255,255,255,.02);border-radius:8px;overflow:hidden;margin-bottom:8px">
+<div style="position:absolute;left:0;top:0;bottom:0;width:11%;background:rgba(99,102,241,.35);border-right:1px solid rgba(99,102,241,.5);display:flex;align-items:center;justify-content:center;font-size:10px;color:#a78bfa;font-weight:700">P1-2</div>
+<div style="position:absolute;left:11%;top:0;bottom:0;width:14%;background:rgba(59,130,246,.25);border-right:1px solid rgba(59,130,246,.4);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--purple);font-weight:700">P3-4</div>
+<div style="position:absolute;left:25%;top:0;bottom:0;width:16%;background:rgba(79,70,229,.3);border-right:1px solid rgba(79,70,229,.5);display:flex;align-items:center;justify-content:center;font-size:10px;color:#a78bfa;font-weight:700">P5</div>
+<div style="position:absolute;left:41%;top:0;bottom:0;width:18%;background:rgba(59,130,246,.2);border-right:1px solid rgba(59,130,246,.35);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--purple);font-weight:700">P6-7</div>
+<div style="position:absolute;left:59%;top:0;bottom:0;width:41%;background:rgba(99,102,241,.2);display:flex;align-items:center;justify-content:center;font-size:10px;color:#a78bfa;font-weight:700">P8-9 (Modern)</div>
+</div>
+<div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted)">
+<span>1491</span><span>1607</span><span>1754</span><span>1865</span><span>1945</span><span>Present</span>
+</div>
+</div>
+<div class="card">
+<div class="card-title">Choose Period</div>
+<div class="period-grid">
+<button class="p-btn all-btn sel" data-period="all" onclick="selectPeriod(this)">  All Periods</button>
+<button class="p-btn" data-period="1" onclick="selectPeriod(this)">Period 1<br/><span style="font-size:13px;color:var(--muted)">1491-1607</span></button>
+<button class="p-btn" data-period="2" onclick="selectPeriod(this)">Period 2<br/><span style="font-size:13px;color:var(--muted)">1607-1754</span></button>
+<button class="p-btn" data-period="3" onclick="selectPeriod(this)">Period 3<br/><span style="font-size:13px;color:var(--muted)">1754-1800</span></button>
+<button class="p-btn" data-period="4" onclick="selectPeriod(this)">Period 4<br/><span style="font-size:13px;color:var(--muted)">1800-1848</span></button>
+<button class="p-btn" data-period="5" onclick="selectPeriod(this)">Period 5<br/><span style="font-size:13px;color:var(--muted)">1844-1877</span></button>
+<button class="p-btn" data-period="6" onclick="selectPeriod(this)">Period 6<br/><span style="font-size:13px;color:var(--muted)">1865-1898</span></button>
+<button class="p-btn" data-period="7" onclick="selectPeriod(this)">Period 7<br/><span style="font-size:13px;color:var(--muted)">1890-1945</span></button>
+<button class="p-btn" data-period="8" onclick="selectPeriod(this)">Period 8<br/><span style="font-size:13px;color:var(--muted)">1945-1980</span></button>
+<button class="p-btn" data-period="9" onclick="selectPeriod(this)">Period 9<br/><span style="font-size:13px;color:var(--muted)">1980-Present</span></button>
+</div>
+<p class="period-hint" id="period-hint">All 100 questions available</p>
+</div>
+<div class="card">
+<div class="card-title">Number of Questions</div>
+<div style="text-align:center;margin-bottom:6px">
+<span class="count-num" id="count-display">10</span>
+</div>
+<div class="slider-wrap">
+<input id="count-slider" max="20" min="1" oninput="updateSlider(this)" style="width:100%" type="range" value="10"/>
+<div class="count-labels"><span>1</span><span>20</span></div>
+</div>
+<p class="avail-note" id="avail-note"></p>
+</div>
+<div class="start-wrap">
+<button class="btn" id="start-btn" onclick="startQuiz()">Begin Quiz -></button>
+</div>
+<div style="text-align:center;padding-bottom:28px">
+<button class="btn-outline" onclick="show('s-writing');setNav('nav-writing')" style="font-size:14px;padding:10px 22px;width:auto">âœï¸ Writing Practice (DBQ · SAQ · LEQ) -></button>
+</div>
+</div>
+<!-- QUIZ -->
+<div class="sec" id="s-quiz" style="padding-top:26px">
+<div class="card">
+<div class="prog-row">
+<span class="prog-lbl" id="q-lbl">Question 1 of 10</span>
+<div class="test-top-actions">
+<span class="score-pill" id="q-score">Score: 0</span>
+<button class="test-exit-btn" onclick="exitCurrentTest('apush')">Exit</button>
+</div>
+</div>
+<div class="prog-bar"><div class="prog-fill" id="q-bar" style="width:0%"></div></div>
+<div class="q-streak-bar" id="q-streak-bar" style="display:none">
+<span class="q-streak-flame"></span>
+<span id="q-streak-text"></span>
+</div>
+<div class="badge" id="q-period"></div>
+<div id="q-stimulus" style="display:none"></div>
+<div class="q-box"><p class="q-text" id="q-text"></p></div>
+<div class="choices" id="q-choices"></div>
+<div class="expl" id="q-expl" style="display:none"></div>
+<button class="btn full" id="q-next" onclick="nextQ()" style="display:none">Next -&gt;</button>
+</div>
+</div>
+<!-- RESULTS -->
+<div class="sec" id="s-results" style="padding-top:26px">
+<div class="card" style="text-align:center">
+<div class="r-score" id="r-score"></div>
+<div class="r-grade" id="r-grade"></div>
+<p class="r-msg" id="r-msg"></p>
+<div id="r-xp-earned" style="font-size:15px;color:var(--muted);margin-bottom:5px"></div>
+<div class="r-xp-bar-wrap"><div class="r-xp-bar" id="r-xp-bar" style="width:0%"></div></div>
+<div class="r-xp-label" id="r-xp-label"></div>
+</div>
+<div class="card" id="sr-timechart" style="display:none">
+<div class="card-title"> Time Per Question</div>
+<div class="time-chart" id="sr-chart-bars"></div>
+<div class="time-chart-labels" id="sr-chart-labels"></div>
+<div style="display:flex;gap:16px;margin-top:8px;font-size:13px;color:var(--muted)">
+<span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#4ade80;margin-right:4px"></span>Ideal pace</span>
+<span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#a78bfa;margin-right:4px"></span>Slightly off</span>
+<span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#f87171;margin-right:4px"></span>Too slow/fast</span>
+</div>
+</div>
+<div class="card">
+<div class="rev-hdr">Answer Review</div>
+<div id="r-review"></div>
+<div class="result-actions">
+<button class="btn-outline" onclick="startQuiz()">Same Settings</button>
+<button class="btn full" onclick="goHome()" style="flex:1">New Setup</button>
+</div>
+</div>
+</div>
+<!-- ACHIEVEMENTS -->
+<div class="sec" id="s-profile" style="padding-top:0">
+<div class="profile-shell">
+<section class="profile-hero">
+<div>
+<span class="bc-label">|PROFILE_ - ALL INFORMATION</span>
+<h1>Your student<br/><em>dashboard.</em></h1>
+<p class="bc-page-sub">Name, profile picture, college list, GPA, SAT score, and question performance together on one page.</p>
+<div class="bc-page-meta">
+<span class="bc-pill">LOCAL_PROFILE</span>
+<span class="bc-pill">COLLEGE_LIST</span>
+<span class="bc-pill">ACADEMIC_SNAPSHOT</span>
+</div>
+</div>
+<div class="profile-card">
+<div class="profile-editor">
+<div class="profile-avatar" id="profile-avatar-preview">SC</div>
+<div>
+<label class="profile-muted" for="profile-name-input">Display name</label>
+<input class="profile-input" id="profile-name-input" oninput="profileSaveName(this.value)" placeholder="Your name"/>
+<div class="profile-actions">
+<button class="profile-chip-btn" onclick="profileSetPreset('Scholar')">Scholar</button>
+<button class="profile-chip-btn" onclick="profileSetPreset('Compass')">Compass</button>
+<button class="profile-chip-btn" onclick="profileSetPreset('Senior')">Senior</button>
+</div>
+<div style="margin-top:11px">
+<input accept="image/*" class="profile-file" id="profile-picture-input" onchange="profileUploadPicture(this)" type="file"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="profile-card wide">
+<div class="profile-title">At-a-glance</div>
+<div class="profile-stat-grid">
+<div class="profile-stat"><b id="profile-gpa-main">-</b><span>Weighted GPA</span><p id="profile-gpa-sub">Use the GPA calculator to save your latest GPA.</p></div>
+<div class="profile-stat"><b id="profile-sat-main">-</b><span>SAT Score</span><p id="profile-sat-sub">Complete a practice test or use the SAT score explorer.</p></div>
+<div class="profile-stat"><b id="profile-grade-main">-</b><span>Question Grade</span><div class="profile-meter"><div class="profile-meter-fill" id="profile-grade-fill"></div></div><p id="profile-grade-sub">Based on answered APUSH + SAT questions.</p></div>
+<div class="profile-stat"><b id="profile-college-count">0</b><span>Universities Listed</span><p id="profile-college-sub">Reach, target, and likely schools from University Selection.</p></div>
+</div>
+</section>
+<div class="profile-grid">
+<section class="profile-card">
+<div class="profile-title">College List</div>
+<div class="profile-split" id="profile-college-summary"></div>
+<div style="height:12px"></div>
+<div class="profile-list" id="profile-college-list"></div>
+</section>
+<section class="profile-card">
+<div class="profile-title">Academic Record</div>
+<div class="profile-split">
+<div class="profile-mini"><b id="profile-uw-gpa">-</b><span>Unweighted</span></div>
+<div class="profile-mini"><b id="profile-w-gpa">-</b><span>Weighted</span></div>
+<div class="profile-mini"><b id="profile-xp">0</b><span>XP</span></div>
+</div>
+<div style="height:14px"></div>
+<div class="profile-list" id="profile-academic-notes"></div>
+</section>
+<section class="profile-card">
+<div class="profile-title">Question Performance</div>
+<div class="profile-split">
+<div class="profile-mini"><b id="profile-overall-acc">-</b><span>Overall</span></div>
+<div class="profile-mini"><b id="profile-apush-acc">-</b><span>APUSH</span></div>
+<div class="profile-mini"><b id="profile-sat-acc">-</b><span>SAT</span></div>
+</div>
+<div style="height:14px"></div>
+<div class="profile-list" id="profile-quiz-log"></div>
+</section>
+<section class="profile-card">
+<div class="profile-title">Next Moves</div>
+<div class="profile-list" id="profile-next-moves"></div>
+</section>
+</div>
+</div>
+</div>
+<div class="sec" id="s-ach" style="padding-top:26px">
+<div class="bc-page-head">
+<div aria-hidden="true" class="bc-grid-bg"></div>
+<div class="bc-page-head-inner">
+<div>
+<span class="bc-label">Achievements</span>
+<h1><em>Achievements.</em></h1>
+<p class="bc-page-sub">Your progress across Student Compass - XP, levels, and unlocks tracked locally.</p>
+</div>
+<div class="bc-mini-orb"><svg style="width:100%;height:100%;overflow:visible" viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><defs><radialgradient cx="50%" cy="50%" id="bg-og-ach" r="50%"><stop offset="0%" stop-color="rgba(139,92,246,1)" stop-opacity="0.22"></stop><stop offset="100%" stop-color="transparent"></stop></radialgradient><radialgradient cx="32%" cy="28%" id="gl-og-ach" r="72%"><stop offset="0%" stop-color="rgba(139,92,246,1)" stop-opacity="0.14"></stop><stop offset="100%" stop-color="rgba(4,7,18,0.97)"></stop></radialgradient></defs><circle cx="100" cy="100" fill="url(#bg-og-ach)" r="94"></circle><circle cx="100" cy="100" fill="url(#gl-og-ach)" r="90" stroke="rgba(139,92,246,1)" stroke-opacity="0.35" stroke-width="1.5"></circle><ellipse cx="76" cy="60" fill="rgba(255,255,255,0.04)" rx="40" ry="22" transform="rotate(-18 76 60)"></ellipse><defs><lineargradient id="tg" x1="0%" x2="100%" y1="0%" y2="100%"><stop offset="0%" stop-color="rgba(216,180,254,0.92)"></stop><stop offset="50%" stop-color="rgba(139,92,246,0.78)"></stop><stop offset="100%" stop-color="rgba(76,29,149,0.88)"></stop></lineargradient></defs><ellipse cx="101" cy="173" fill="rgba(0,0,0,0.42)" rx="38" ry="7"></ellipse><path d="M60,44 Q56,78 64,110 Q74,130 100,136 Q126,130 136,110 Q144,78 140,44Z" fill="url(#tg)" stroke="rgba(216,180,254,0.5)" stroke-width="1.5"></path><path d="M71,50 Q68,76 73,98" fill="none" stroke="rgba(255,255,255,0.26)" stroke-linecap="round" stroke-width="5"></path><path d="M60,66 Q36,66 38,94 Q40,118 64,110" fill="none" stroke="rgba(196,148,255,0.72)" stroke-linecap="round" stroke-width="5"></path><path d="M140,66 Q164,66 162,94 Q160,118 136,110" fill="none" stroke="rgba(196,148,255,0.72)" stroke-linecap="round" stroke-width="5"></path><rect fill="rgba(124,58,237,0.7)" height="22" rx="2" stroke="rgba(196,148,255,0.38)" stroke-width="1" width="14" x="93" y="136"></rect><rect fill="rgba(255,255,255,0.1)" height="20" rx="1" width="4" x="94" y="137"></rect><rect fill="rgba(0,0,0,0.22)" height="12" rx="4" width="62" x="69" y="162"></rect><rect fill="rgba(124,58,237,0.52)" height="12" rx="4" stroke="rgba(196,148,255,0.65)" stroke-width="1.5" width="66" x="67" y="158"></rect><rect fill="rgba(255,255,255,0.13)" height="3" rx="1.5" width="60" x="70" y="159"></rect><polygon fill="rgba(253,224,71,0.82)" points="100,62 107,80 127,80 112,91 118,110 100,99 82,110 88,91 73,80 93,80" stroke="rgba(253,224,71,0.96)" stroke-width="0.8"></polygon><circle cx="100" cy="88" fill="rgba(253,224,71,0.35)" r="7"></circle></svg></div>
+</div>
+</div>
+<!-- 3D animated level card -->
+<div class="card" style="background:linear-gradient(135deg,rgba(79,70,229,.08),rgba(59,130,246,.06));border-color:rgba(79,70,229,.25);animation:pulse3d 4s ease-in-out infinite">
+<div class="card-title" style="color:#a78bfa">Your Level</div>
+<div class="level-banner">
+<div class="level-icon" id="lv-icon"></div>
+<div class="level-name" id="lv-name">Freshman</div>
+<div class="level-xp" id="lv-xp">0 XP total</div>
+<div class="lv-bar-wrap"><div class="lv-bar" id="lv-bar" style="width:0%"></div></div>
+<div class="lv-next" id="lv-next"></div>
+</div>
+<div class="stats-grid" id="stats-grid"></div>
+</div>
+<div class="card">
+<div class="card-title">Achievements</div>
+<div id="ach-grid"></div>
+</div>
+</div>
+<div class="sec" id="s-purpose" style="padding-top:26px">
+<div class="bc-page-head">
+<div aria-hidden="true" class="bc-grid-bg"></div>
+<div class="bc-page-head-inner">
+<div>
+<span class="bc-label">Purpose</span>
+<h1>Why this<br/><em>site exists.</em></h1>
+<p class="bc-page-sub">Student Compass is built to help students understand school, practice for major exams, plan stronger applications, and move through the U.S. education system with less confusion.</p>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-title">The Goal</div>
+<div class="purpose-grid">
+<div class="purpose-note"><strong>Make school easier to understand.</strong><span>The site explains GPA, courses, school systems, university planning, SAT practice, and APUSH in one place instead of making students search across disconnected resources.</span></div>
+<div class="purpose-note"><strong>Help students act, not just read.</strong><span>Practice tools, writing prompts, score tracking, and university lists are meant to turn advice into daily decisions and measurable progress.</span></div>
+<div class="purpose-note"><strong>Support students starting from zero.</strong><span>A student new to the U.S. school system should be able to open the site and understand what to do next, what matters, and what questions to ask.</span></div>
+</div>
+</div>
+<div class="card">
+<div class="card-title">Leave a Recommendation or Story</div>
+<p style="font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:0">Share how the website helped you, what changed for you, or what you would recommend to other students. These comments save on this browser.</p>
+<form class="feedback-form" onsubmit="submitPurposeComment(event)">
+<input id="purpose-name" placeholder="Name or nickname"/>
+<select id="purpose-type"><option>Recommendation</option><option>How it affected me</option><option>Student story</option></select>
+<textarea id="purpose-message" placeholder="Write your comment..."></textarea>
+<button class="btn full" type="submit">Submit Comment</button>
+</form>
+<div class="feedback-list" id="purpose-comments"></div>
+</div>
+</div>
+<div class="sec" id="s-feedback" style="padding-top:26px">
+<div class="bc-page-head">
+<div aria-hidden="true" class="bc-grid-bg"></div>
+<div class="bc-page-head-inner">
+<div>
+<span class="bc-label">|FEEDBACK_</span>
+<h1>Suggest fixes<br/><em>and additions.</em></h1>
+<p class="bc-page-sub">Use this page to report problems, confusing parts, missing tools, or ideas that would make Student Compass more useful.</p>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-title">Submit Feedback</div>
+<form class="feedback-form" onsubmit="submitSiteFeedback(event)">
+<input id="feedback-name" placeholder="Name or nickname"/>
+<select id="feedback-type"><option>Fix a bug</option><option>Add a feature</option><option>Improve design</option><option>Improve content</option><option>Other</option></select>
+<textarea id="feedback-message" placeholder="What should be fixed, changed, or added?"></textarea>
+<button class="btn full" type="submit">Submit Feedback</button>
+</form>
+</div>
+<div class="card">
+<div class="card-title">Saved Feedback</div>
+<div class="feedback-list" id="site-feedback-list"></div>
+</div>
+</div>
+<div id="toast">
+<div class="t-icon" id="t-icon"></div>
+<div class="t-title" id="t-title"></div>
+<div class="t-desc" id="t-desc"></div>
+</div>
+<!-- SAT HUB -->
+<div class="sec" id="s-sat" style="padding-top:0">
+<div class="bc-page-head">
+<div aria-hidden="true" class="bc-grid-bg"></div>
+<div class="bc-page-head-inner">
+<div>
+<span class="bc-label">|MODULE_01_ - DIGITAL SAT</span>
+<h1>Master the<br/><em>SAT.</em></h1>
+<p class="bc-page-sub">Choose a section, pick a unit, and drill the concepts that move the score. Built around the digital SAT format with full practice tests and timed strategy drills.</p>
+<div class="bc-page-meta">
+<span class="bc-pill">485_QUESTIONS</span>
+<span class="bc-pill">FULL_PRACTICE_TEST</span>
+<span class="bc-pill">VOCAB_DECK</span>
+</div>
+</div>
+<div class="bc-mini-orb"><svg style="width:100%;height:100%;overflow:visible" viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><defs><radialgradient cx="50%" cy="50%" id="bg-og-sat-practice" r="50%"><stop offset="0%" stop-color="rgba(59,130,246,1)" stop-opacity="0.22"></stop><stop offset="100%" stop-color="transparent"></stop></radialgradient><radialgradient cx="32%" cy="28%" id="gl-og-sat-practice" r="72%"><stop offset="0%" stop-color="rgba(59,130,246,1)" stop-opacity="0.14"></stop><stop offset="100%" stop-color="rgba(4,7,18,0.97)"></stop></radialgradient></defs><circle cx="100" cy="100" fill="url(#bg-og-sat-practice)" r="94"></circle><circle cx="100" cy="100" fill="url(#gl-og-sat-practice)" r="90" stroke="rgba(59,130,246,1)" stroke-opacity="0.35" stroke-width="1.5"></circle><ellipse cx="76" cy="60" fill="rgba(255,255,255,0.04)" rx="40" ry="22" transform="rotate(-18 76 60)"></ellipse><rect fill="rgba(0,0,0,0.38)" height="130" rx="5" width="126" x="37" y="37"></rect><rect fill="rgba(8,14,38,0.94)" height="132" rx="5" stroke="rgba(59,130,246,0.52)" stroke-width="1.8" width="136" x="32" y="30"></rect><rect fill="rgba(59,130,246,0.22)" height="4" rx="2" width="132" x="34" y="31"></rect><text fill="rgba(59,130,246,0.85)" font-family="monospace" font-size="12" font-weight="700" letter-spacing="3" text-anchor="middle" x="100" y="50">SAT</text><line stroke="rgba(59,130,246,0.45)" stroke-linecap="round" stroke-width="1.5" x1="42" x2="158" y1="56" y2="56"></line><text fill="rgba(79,142,247,0.65)" font-family="monospace" font-size="10" text-anchor="middle" x="60" y="70">A</text><text fill="rgba(79,142,247,0.65)" font-family="monospace" font-size="10" text-anchor="middle" x="82" y="70">B</text><text fill="rgba(79,142,247,0.65)" font-family="monospace" font-size="10" text-anchor="middle" x="104" y="70">C</text><text fill="rgba(79,142,247,0.65)" font-family="monospace" font-size="10" text-anchor="middle" x="126" y="70">D</text><text fill="rgba(136,153,180,0.5)" font-family="monospace" font-size="9" x="44" y="83">1.</text><circle cx="60" cy="80" fill="none" r="7" stroke="rgba(79,142,247,0.4)" stroke-width="1.5"></circle><circle cx="82" cy="80" fill="rgba(79,142,247,0.82)" r="7" stroke="rgba(147,197,253,0.6)" stroke-width="1"></circle><circle cx="104" cy="80" fill="none" r="7" stroke="rgba(79,142,247,0.4)" stroke-width="1.5"></circle><circle cx="126" cy="80" fill="none" r="7" stroke="rgba(79,142,247,0.4)" stroke-width="1.5"></circle><text fill="rgba(136,153,180,0.5)" font-family="monospace" font-size="9" x="44" y="99">2.</text><circle cx="60" cy="96" fill="rgba(79,142,247,0.82)" r="7" stroke="rgba(147,197,253,0.6)" stroke-width="1"></circle><circle cx="82" cy="96" fill="none" r="7" stroke="rgba(79,142,247,0.4)" stroke-width="1.5"></circle><circle cx="104" cy="96" fill="none" r="7" stroke="rgba(79,142,247,0.4)" stroke-width="1.5"></circle><circle cx="126" cy="96" fill="none" r="7" stroke="rgba(79,142,247,0.4)" stroke-width="1.5"></circle><text fill="rgba(136,153,180,0.5)" font-family="monospace" font-size="9" x="44" y="115">3.</text><circle cx="60" cy="112" fill="none" r="7" stroke="rgba(79,142,247,0.4)" stroke-width="1.5"></circle><circle cx="82" cy="112" fill="none" r="7" stroke="rgba(79,142,247,0.4)" stroke-width="1.5"></circle><circle cx="104" cy="112" fill="none" r="7" stroke="rgba(79,142,247,0.4)" stroke-width="1.5"></circle><circle cx="126" cy="112" fill="rgba(79,142,247,0.82)" r="7" stroke="rgba(147,197,253,0.6)" stroke-width="1"></circle><text fill="rgba(136,153,180,0.5)" font-family="monospace" font-size="9" x="44" y="131">4.</text><circle cx="60" cy="128" fill="none" r="7" stroke="rgba(79,142,247,0.4)" stroke-width="1.5"></circle><circle cx="82" cy="128" fill="none" r="7" stroke="rgba(79,142,247,0.4)" stroke-width="1.5"></circle><circle cx="104" cy="128" fill="rgba(79,142,247,0.82)" r="7" stroke="rgba(147,197,253,0.6)" stroke-width="1"></circle><circle cx="126" cy="128" fill="none" r="7" stroke="rgba(79,142,247,0.4)" stroke-width="1.5"></circle><text fill="rgba(136,153,180,0.5)" font-family="monospace" font-size="9" x="44" y="147">5.</text><circle cx="60" cy="144" fill="none" r="7" stroke="rgba(79,142,247,0.25)" stroke-dasharray="3 2" stroke-width="1.5"></circle><circle cx="82" cy="144" fill="none" r="7" stroke="rgba(79,142,247,0.25)" stroke-dasharray="3 2" stroke-width="1.5"></circle><circle cx="104" cy="144" fill="none" r="7" stroke="rgba(79,142,247,0.25)" stroke-dasharray="3 2" stroke-width="1.5"></circle><circle cx="126" cy="144" fill="none" r="7" stroke="rgba(79,142,247,0.25)" stroke-dasharray="3 2" stroke-width="1.5"></circle><g transform="rotate(-35 158 158)"><rect fill="rgba(59,130,246,0.7)" height="32" rx="2" stroke="rgba(147,197,253,0.4)" stroke-width="0.8" width="10" x="150" y="136"></rect><rect fill="rgba(252,129,129,0.8)" height="7" rx="2" width="10" x="150" y="133"></rect><polygon fill="rgba(232,190,90,0.85)" points="150,168 160,168 155,178"></polygon></g></svg></div>
+</div>
+</div>
+<div class="sat-hub" style="padding-top:8px">
+<!-- Tab navigation -->
+<div class="sat-nav-tabs">
+<button class="sat-tab active-overview" id="tab-overview" onclick="showSATTab('overview')">Overview</button>
+<button class="sat-tab" id="tab-english" onclick="showSATTab('english')">English</button>
+<button class="sat-tab" id="tab-math" onclick="showSATTab('math')">Math</button>
+<button class="sat-tab" id="tab-pt" onclick="showSATTab('pt')">Practice Test</button>
+<button class="sat-tab" id="tab-drills" onclick="showSATTab('drills')">Strategy Drills</button>
+</div>
+<!-- OVERVIEW TAB -->
+<div id="sat-tab-overview" style="padding-bottom:40px">
+<!-- Stats row -->
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:32px 0 0;border-bottom:1px solid rgba(59,130,246,.12)">
+<div style="padding:0 0 28px;border-right:1px solid rgba(59,130,246,.1)">
+<div class="bc-stat-num bc-text-gradient" style="font-size:clamp(40px,5vw,60px);line-height:1">1600</div>
+<div class="bc-label" style="margin-top:6px;font-size:9px">MAX_SCORE</div>
+</div>
+<div style="padding:0 0 28px 24px;border-right:1px solid rgba(59,130,246,.1)">
+<div class="bc-stat-num bc-text-gradient" style="font-size:clamp(40px,5vw,60px);line-height:1">98</div>
+<div class="bc-label" style="margin-top:6px;font-size:9px">QUESTIONS</div>
+</div>
+<div style="padding:0 0 28px 24px;border-right:1px solid rgba(59,130,246,.1)">
+<div class="bc-stat-num bc-text-gradient" style="font-size:clamp(40px,5vw,60px);line-height:1">2h14</div>
+<div class="bc-label" style="margin-top:6px;font-size:9px">TOTAL_TIME</div>
+</div>
+<div style="padding:0 0 28px 24px">
+<div class="bc-stat-num bc-text-gradient" style="font-size:clamp(40px,5vw,60px);line-height:1">2</div>
+<div class="bc-label" style="margin-top:6px;font-size:9px">SECTIONS</div>
+</div>
+</div>
+<p style="font-family:'Source Serif 4',Georgia,serif;font-size:18px;color:var(--muted);line-height:1.8;margin:28px 0 0">The SAT tests <strong style="color:var(--text)">Reading &amp; Writing</strong> and <strong style="color:var(--text)">Math</strong> - the two areas most predictive of college readiness. Fully digital and adaptive: module 2 adjusts to your module 1 performance, raising or lowering the score ceiling.</p>
+<div style="height:1px;background:linear-gradient(90deg,rgba(59,130,246,.18),transparent);margin:52px 0 0"></div>
+<!-- Score Explorer -->
+<div style="padding:52px 0 0">
+<span class="bc-label">|SCORE_RANGE_</span>
+<h2 style="font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,52px);font-weight:900;margin:14px 0 8px;line-height:1.1">What does your score <em>mean?</em></h2>
+<p style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);margin:0 0 36px;line-height:1.7">Drag the slider to see what any score means for college admissions.</p>
+<div style="display:flex;align-items:baseline;gap:14px;margin-bottom:8px">
+<span class="bc-stat-num bc-text-gradient" id="score-slider-val" style="font-size:clamp(56px,8vw,88px);line-height:1">1200</span>
+<span style="font-size:16px;color:var(--muted);font-family:'Playfair Display',serif">/ 1600</span>
+</div>
+<div id="score-slider-label" style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#4f8ef7;margin-bottom:28px;line-height:1.3">Top 25% - Solid scores, most mid-tier schools</div>
+<input max="1600" min="400" oninput="satScoreSlider(this.value)" step="10" style="width:100%;accent-color:#3b82f6;height:4px;margin-bottom:10px" type="range" value="1200"/>
+<div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);font-family:monospace;letter-spacing:1px">
+<span>400</span><span>700</span><span>1000</span><span>1300</span><span>1600</span>
+</div>
+</div>
+<div style="height:1px;background:linear-gradient(90deg,rgba(59,130,246,.18),transparent);margin:52px 0 0"></div>
+<!-- Sections -->
+<div style="padding:52px 0 0">
+<span class="bc-label">|THE_TEST_</span>
+<h2 style="font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,52px);font-weight:900;margin:14px 0 8px;line-height:1.1">Two sections. <em>One score.</em></h2>
+<p style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);margin:0 0 40px;line-height:1.7">Each section has two adaptive modules. Doing well in module 1 unlocks harder questions - and a higher score ceiling. No penalty for guessing.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:36px">
+<div onclick="showSATTab('english')" style="border-top:2px solid #4f8ef7;padding-top:20px;cursor:pointer">
+<div class="bc-label" style="color:#4f8ef7;margin-bottom:14px">READING_&amp;_WRITING</div>
+<div style="font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,56px);font-weight:900;color:var(--text);line-height:1;margin-bottom:8px">54</div>
+<div style="font-size:15px;color:var(--muted);margin-bottom:16px">questions · 64 min · ~71 sec each</div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:15px;color:var(--muted);line-height:1.7">Vocabulary in context, grammar, text structure, evidence-based analysis, rhetorical synthesis.</div>
+<div style="margin-top:16px;font-size:13px;color:#4f8ef7;font-family:'Playfair Display',serif;font-weight:600">Practice English -></div>
+</div>
+<div onclick="showSATTab('math')" style="border-top:2px solid #a78bfa;padding-top:20px;cursor:pointer">
+<div class="bc-label" style="color:#a78bfa;margin-bottom:14px">MATH</div>
+<div style="font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,56px);font-weight:900;color:var(--text);line-height:1;margin-bottom:8px">44</div>
+<div style="font-size:15px;color:var(--muted);margin-bottom:16px">questions · 70 min · ~95 sec each</div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:15px;color:var(--muted);line-height:1.7">Linear equations, advanced math, data analysis, geometry and trigonometry.</div>
+<div style="margin-top:16px;font-size:13px;color:#a78bfa;font-family:'Playfair Display',serif;font-weight:600">Math</div>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;border-top:1px solid rgba(59,130,246,.1);padding-top:28px">
+<div>
+<div class="bc-label" style="font-size:9px;margin-bottom:8px">FORMAT</div>
+<div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--text)">Digital Adaptive</div>
+<div style="font-size:13px;color:var(--muted);margin-top:4px">Laptop or tablet at test center</div>
+</div>
+<div>
+<div class="bc-label" style="font-size:9px;margin-bottom:8px">WRONG ANSWER PENALTY</div>
+<div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--text)">None</div>
+<div style="font-size:13px;color:var(--muted);margin-top:4px">Always fill in an answer</div>
+</div>
+<div>
+<div class="bc-label" style="font-size:9px;margin-bottom:8px">CALCULATOR</div>
+<div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--text)">All of Math (Desmos)</div>
+<div style="font-size:13px;color:var(--muted);margin-top:4px">Built-in, don't rely on it for simple arithmetic</div>
+</div>
+</div>
+</div>
+<div style="height:1px;background:linear-gradient(90deg,rgba(59,130,246,.18),transparent);margin:52px 0 0"></div>
+<!-- Strategy -->
+<div style="padding:52px 0 0">
+<span class="bc-label">|STRATEGY_</span>
+<h2 style="font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,52px);font-weight:900;margin:14px 0 8px;line-height:1.1">How to actually <em>do well.</em></h2>
+<p style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);margin:0 0 44px;line-height:1.7">The SAT rewards pattern recognition, not raw intelligence. Tap any topic to expand.</p>
+<div style="display:flex;flex-direction:column;gap:0">
+<div style="border-top:1px solid rgba(59,130,246,.12)">
+<button onclick="satAccToggle(this)" style="width:100%;display:flex;justify-content:space-between;align-items:center;padding:22px 0;background:none;border:none;color:var(--text);cursor:pointer;text-align:left">
+<span style="font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,26px);font-weight:800">Time Management</span>
+<span class="sat-acc-arrow" style="font-size:14px;color:var(--muted);transition:transform .2s;flex-shrink:0;margin-left:16px">v</span>
+</button>
+<div class="sat-acc-body" style="display:none;padding:0 0 28px">
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);line-height:1.85;display:flex;flex-direction:column;gap:14px">
+<div><strong style="color:var(--text)">71 sec per RW question · 95 sec per Math question.</strong> Know your budget before you sit down.</div>
+<div>If stuck after 90 seconds - guess, flag, move on. A skipped question and a wrong answer cost the same. Skipping saves time for questions you can win.</div>
+<div>Easy and hard questions are worth identical points. Never spend 3 minutes on one hard question when you could answer 2 easy ones.</div>
+</div>
+</div>
+</div>
+<div style="border-top:1px solid rgba(59,130,246,.12)">
+<button onclick="satAccToggle(this)" style="width:100%;display:flex;justify-content:space-between;align-items:center;padding:22px 0;background:none;border:none;color:var(--text);cursor:pointer;text-align:left">
+<span style="font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,26px);font-weight:800">Reading &amp; Writing</span>
+<span class="sat-acc-arrow" style="font-size:14px;color:var(--muted);transition:transform .2s;flex-shrink:0;margin-left:16px">v</span>
+</button>
+<div class="sat-acc-body" style="display:none;padding:0 0 28px">
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);line-height:1.85;display:flex;flex-direction:column;gap:14px">
+<div><strong style="color:var(--text)">Read the question before the passage.</strong> Knowing what to look for makes reading faster and more targeted.</div>
+<div><strong style="color:var(--text)">Eliminate, don't just pick.</strong> The SAT uses "almost right" traps. Cross out clearly wrong choices first.</div>
+<div><strong style="color:var(--text)">Vocabulary:</strong> Go with the word that fits the passage's specific tone - not the most impressive-sounding one.</div>
+<div><strong style="color:var(--text)">Grammar:</strong> Read the sentence aloud mentally. The SAT tests a small repeating set of rules - learn them cold.</div>
+</div>
+</div>
+</div>
+<div style="border-top:1px solid rgba(59,130,246,.12)">
+<button onclick="satAccToggle(this)" style="width:100%;display:flex;justify-content:space-between;align-items:center;padding:22px 0;background:none;border:none;color:var(--text);cursor:pointer;text-align:left">
+<span style="font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,26px);font-weight:800">Math</span>
+<span class="sat-acc-arrow" style="font-size:14px;color:var(--muted);transition:transform .2s;flex-shrink:0;margin-left:16px">v</span>
+</button>
+<div class="sat-acc-body" style="display:none;padding:0 0 28px">
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);line-height:1.85;display:flex;flex-direction:column;gap:14px">
+<div><strong style="color:var(--text)">Show your work.</strong> Most errors come from skipping steps on problems you actually know how to solve.</div>
+<div><strong style="color:var(--text)">Plug in numbers.</strong> When a problem uses variables, substitute real numbers and test which answer works.</div>
+<div><strong style="color:var(--text)">Work backwards from answer choices.</strong> For "what is x" questions, try plugging in the choices - start with B or C.</div>
+<div><strong style="color:var(--text)">Don't skip word problems.</strong> Most SAT word problems test simple concepts in context. Set up the equation and the math is usually straightforward.</div>
+</div>
+</div>
+</div>
+<div style="border-top:1px solid rgba(59,130,246,.12);border-bottom:1px solid rgba(59,130,246,.12)">
+<button onclick="satAccToggle(this)" style="width:100%;display:flex;justify-content:space-between;align-items:center;padding:22px 0;background:none;border:none;color:var(--text);cursor:pointer;text-align:left">
+<span style="font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,26px);font-weight:800">Mindset</span>
+<span class="sat-acc-arrow" style="font-size:14px;color:var(--muted);transition:transform .2s;flex-shrink:0;margin-left:16px">v</span>
+</button>
+<div class="sat-acc-body" style="display:none;padding:0 0 28px">
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);line-height:1.85;display:flex;flex-direction:column;gap:14px">
+<div><strong style="color:var(--text)">Pattern recognition, not intelligence.</strong> Every question type repeats. The more patterns you know, the faster and more accurate you get.</div>
+<div><strong style="color:var(--text)">Review wrong answers more than right ones.</strong> Understanding one mistake is worth 10x reviewing questions you already know.</div>
+<div><strong style="color:var(--text)">Consistency beats cramming.</strong> 30 minutes daily for 8 weeks outperforms any last-minute marathon.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- CTA -->
+<div style="padding:48px 0 0;display:flex;gap:12px;flex-wrap:wrap">
+<button class="btn-outline" onclick="showSATTab('english')" style="flex:1;min-width:120px">English -></button>
+<button class="btn-outline" onclick="showSATTab('math')" style="flex:1;min-width:120px;border-color:rgba(167,139,250,.35);color:#a78bfa">Math</button>
+<button class="btn full" onclick="showSATTab('pt')" style="flex:1;min-width:140px">Practice Test -></button>
+</div>
+</div>
+<!-- ENGLISH UNITS TAB -->
+<div id="sat-tab-english" style="display:none">
+<div class="sat-polish-hero sat-polish-english">
+<div>
+<div class="eyebrow">Reading Precision</div>
+<h2>Reading &amp; <em>Writing</em></h2>
+<p>Train the exact skills that decide the English score: spotting what a question is really asking, eliminating trap answers, and applying grammar rules under time.</p>
+<div class="sat-polish-metrics">
+<div><strong>54</strong><span>test questions</span></div>
+<div><strong>64m</strong><span>total time</span></div>
+<div><strong>71s</strong><span>average pace</span></div>
+</div>
+</div>
+<div class="sat-polish-panel">
+<div class="drills-panel-kicker">What English practice builds</div>
+<div><span>Precision</span><p>Choose the answer that fits the exact wording, not the one that only sounds close.</p></div>
+<div><span>Control</span><p>Turn grammar into a checklist instead of a feeling.</p></div>
+<div><span>Evidence</span><p>Match claims to proof quickly, especially when the passage is dense.</p></div>
+</div>
+</div>
+<!-- Step 1: skill -->
+<div class="sat-polish-why-grid">
+<div class="sat-polish-why-card"><span>01</span><h3>Vocabulary in context</h3><p>Practice choosing words by tone, logic, and surrounding clues instead of memorizing definitions alone.</p></div>
+<div class="sat-polish-why-card"><span>02</span><h3>Grammar patterns</h3><p>Build speed on punctuation, agreement, sentence boundaries, and transitions that repeat across tests.</p></div>
+<div class="sat-polish-why-card"><span>03</span><h3>Reading traps</h3><p>Learn how the SAT writes answers that are true, but not answering the question.</p></div>
+</div>
+<div class="sat-polish-start" id="eng-step-skill">
+<div class="drills-step-label">Step 1 - Choose a skill</div>
+<div class="sat-unit-grid" style="perspective:1000px">
+<div class="sat-unit-card eng-unit featured" onclick="satPickSkill('english','Vocabulary in Context',this)">
+<div class="unit-card-header"><span class="unit-icon"></span><div><div class="unit-title">Vocabulary in Context</div><div class="unit-q-count">60 questions · ~18%</div></div></div>
+<div class="unit-tags"><span class="unit-tag eng">Precision</span><span class="unit-tag eng">Tone</span><span class="unit-tag eng">Context Clues</span></div>
+</div>
+<div class="sat-unit-card eng-unit featured" onclick="satPickSkill('english','Grammar',this)">
+<div class="unit-card-header"><span class="unit-icon"></span><div><div class="unit-title">Grammar &amp; Standard English</div><div class="unit-q-count">70 questions · ~26%</div></div></div>
+<div class="unit-tags"><span class="unit-tag eng">Punctuation</span><span class="unit-tag eng">Agreement</span><span class="unit-tag eng">Parallelism</span></div>
+</div>
+<div class="sat-unit-card eng-unit" onclick="satPickSkill('english','Text Structure',this)">
+<div class="unit-card-header"><span class="unit-icon"></span><div><div class="unit-title">Text Structure &amp; Purpose</div><div class="unit-q-count">40 questions · ~16%</div></div></div>
+<div class="unit-tags"><span class="unit-tag eng">Main Idea</span><span class="unit-tag eng">Author's Purpose</span></div>
+</div>
+<div class="sat-unit-card eng-unit" onclick="satPickSkill('english','Evidence-Based',this)">
+<div class="unit-card-header"><span class="unit-icon"></span><div><div class="unit-title">Evidence-Based Analysis</div><div class="unit-q-count">40 questions · ~20%</div></div></div>
+<div class="unit-tags"><span class="unit-tag eng">Charts &amp; Graphs</span><span class="unit-tag eng">Data</span></div>
+</div>
+<div class="sat-unit-card eng-unit" onclick="satPickSkill('english','Rhetorical Synthesis',this)">
+<div class="unit-card-header"><span class="unit-icon"></span><div><div class="unit-title">Rhetorical Synthesis</div><div class="unit-q-count">55 questions · ~12%</div></div></div>
+<div class="unit-tags"><span class="unit-tag eng">Note-Taking</span><span class="unit-tag eng">Synthesis</span></div>
+</div>
+<div class="sat-unit-card eng-unit" onclick="satPickSkill('english','all',this)">
+<div class="unit-card-header"><span class="unit-icon"></span><div><div class="unit-title">Full Mixed Practice</div><div class="unit-q-count">All 265 English questions</div></div></div>
+<div class="unit-tags"><span class="unit-tag eng">All Units</span><span class="unit-tag eng">Test Simulation</span></div>
+</div>
+</div>
+</div>
+<!-- Step 2+3: count + start (hidden until skill chosen) -->
+<div id="eng-step-start" style="display:none;margin-top:20px">
+<div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--purple);margin-bottom:14px;font-weight:600">Step 2 - How many questions?</div>
+<div class="card" style="margin-bottom:16px">
+<div style="text-align:center;margin-bottom:8px">
+<span class="count-num" id="sat-count-display">15</span>
+</div>
+<div class="slider-wrap">
+<input id="sat-count-slider" max="50" min="1" oninput="updateSATSlider(this)" style="width:100%" type="range" value="15"/>
+<div class="count-labels"><span>1</span><span>50</span></div>
+</div>
+<p class="avail-note" id="sat-avail-note">15 questions selected.</p>
+</div>
+<button class="btn full" id="eng-start-btn" onclick="satLaunchUnit()">Start Practice -></button>
+<button onclick="satResetStep('english')" style="display:block;width:100%;margin-top:10px;background:none;border:1px solid var(--border);color:var(--muted);border-radius:8px;padding:10px;cursor:pointer;font-size:13px"><- Change skill</button>
+</div>
+</div>
+<!-- MATH UNITS TAB -->
+<div id="sat-tab-math" style="display:none">
+<div class="sat-polish-hero sat-polish-math">
+<div>
+<div class="eyebrow">Calculator-Smart Math</div>
+<h2>Math - <em>All Calculator</em></h2>
+<p>Train the SAT math habits that actually move fast: recognize the structure, pick the cleanest method, and use Desmos when it saves time.</p>
+<div class="sat-polish-metrics">
+<div><strong>44</strong><span>test questions</span></div>
+<div><strong>70m</strong><span>total time</span></div>
+<div><strong>95s</strong><span>average pace</span></div>
+</div>
+</div>
+<div class="sat-polish-panel">
+<div class="drills-panel-kicker">What Math practice builds</div>
+<div><span>Setup</span><p>Translate words, graphs, and tables into equations without overthinking.</p></div>
+<div><span>Method choice</span><p>Decide when to solve, plug in, graph, or test answer choices.</p></div>
+<div><span>Accuracy</span><p>Reduce small mistakes by keeping work organized and checking units.</p></div>
+</div>
+</div>
+<!-- Step 1: skill -->
+<div class="sat-polish-why-grid">
+<div class="sat-polish-why-card"><span>01</span><h3>Algebra first</h3><p>Linear relationships appear constantly. Mastering them gives you the biggest early score return.</p></div>
+<div class="sat-polish-why-card"><span>02</span><h3>Desmos decisions</h3><p>Use the calculator as a strategy tool, not a crutch, especially for systems, graphs, and functions.</p></div>
+<div class="sat-polish-why-card"><span>03</span><h3>Error control</h3><p>Most math misses are process mistakes. Focused practice shows exactly where the process breaks.</p></div>
+</div>
+<div class="sat-polish-start" id="math-step-skill">
+<div class="drills-step-label">Step 1 - Choose a skill</div>
+<div class="sat-unit-grid">
+<div class="sat-unit-card math-unit featured" onclick="satPickSkill('math','Linear Equations',this)">
+<div class="unit-card-header"><span class="unit-icon"></span><div><div class="unit-title">Linear Equations &amp; Systems</div><div class="unit-q-count">60 questions · ~35%</div></div></div>
+<div class="unit-tags"><span class="unit-tag math">Slope-Intercept</span><span class="unit-tag math">Systems</span><span class="unit-tag math">Inequalities</span></div>
+</div>
+<div class="sat-unit-card math-unit featured" onclick="satPickSkill('math','Advanced Math',this)">
+<div class="unit-card-header"><span class="unit-icon"></span><div><div class="unit-title">Advanced Math</div><div class="unit-q-count">60 questions · ~28%</div></div></div>
+<div class="unit-tags"><span class="unit-tag math">Quadratics</span><span class="unit-tag math">Functions</span><span class="unit-tag math">Exponentials</span></div>
+</div>
+<div class="sat-unit-card math-unit" onclick="satPickSkill('math','Data Analysis',this)">
+<div class="unit-card-header"><span class="unit-icon"></span><div><div class="unit-title">Data Analysis &amp; Statistics</div><div class="unit-q-count">50 questions · ~15%</div></div></div>
+<div class="unit-tags"><span class="unit-tag math">Statistics</span><span class="unit-tag math">Probability</span><span class="unit-tag math">Graphs</span></div>
+</div>
+<div class="sat-unit-card math-unit" onclick="satPickSkill('math','Geometry',this)">
+<div class="unit-card-header"><span class="unit-icon"></span><div><div class="unit-title">Geometry &amp; Trigonometry</div><div class="unit-q-count">50 questions · ~12%</div></div></div>
+<div class="unit-tags"><span class="unit-tag math">Triangles</span><span class="unit-tag math">Circles</span><span class="unit-tag math">Trig</span></div>
+</div>
+<div class="sat-unit-card math-unit" onclick="satPickSkill('math','all',this)">
+<div class="unit-card-header"><span class="unit-icon"></span><div><div class="unit-title">Full Mixed Practice</div><div class="unit-q-count">All 220 Math questions</div></div></div>
+<div class="unit-tags"><span class="unit-tag math">All Units</span><span class="unit-tag math">Test Simulation</span></div>
+</div>
+</div>
+</div>
+<!-- Step 2+3: count + start -->
+<div id="math-step-start" style="display:none;margin-top:20px">
+<div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--purple);margin-bottom:14px;font-weight:600">Step 2 - How many questions?</div>
+<div class="card" style="margin-bottom:16px">
+<div style="text-align:center;margin-bottom:8px">
+<span class="count-num" id="sat-count-display-math">15</span>
+</div>
+<div class="slider-wrap">
+<input id="sat-count-slider-math" max="50" min="1" oninput="updateSATSliderMath(this)" style="width:100%" type="range" value="15"/>
+<div class="count-labels"><span>1</span><span>50</span></div>
+</div>
+<p class="avail-note" id="sat-avail-note-math">15 questions selected.</p>
+</div>
+<button class="btn full" id="math-start-btn" onclick="satLaunchUnit()">Start Practice -></button>
+<button onclick="satResetStep('math')" style="display:block;width:100%;margin-top:10px;background:none;border:1px solid var(--border);color:var(--muted);border-radius:8px;padding:10px;cursor:pointer;font-size:13px"><- Change skill</button>
+</div>
+</div>
+<!-- PRACTICE TEST TAB -->
+<div id="sat-tab-pt" style="display:none">
+<div class="sat-polish-hero sat-polish-pt">
+<div>
+<div class="eyebrow">Full Diagnostic</div>
+<h2>Practice <em>Test</em></h2>
+<p>Run the full SAT flow when you need a real read on your score. The diagnostic samples every major domain and turns the result into a study plan.</p>
+<div class="sat-polish-metrics">
+<div><strong>98</strong><span>questions</span></div>
+<div><strong>2h14</strong><span>test time</span></div>
+<div><strong>1600</strong><span>score scale</span></div>
+</div>
+</div>
+<div class="sat-polish-panel">
+<div class="drills-panel-kicker">What the test tells you</div>
+<div><span>Score range</span><p>Estimated section scores show where you are right now.</p></div>
+<div><span>Weak spots</span><p>Category breakdowns reveal which skills need the next focused drill.</p></div>
+<div><span>Strategy score</span><p>Pacing and accuracy patterns show how much strategy is affecting the result.</p></div>
+</div>
+</div>
+<div class="sat-polish-why-grid">
+<div class="sat-polish-why-card"><span>01</span><h3>Real pacing</h3><p>Practice sets show skill. Full tests show whether you can keep that skill alive under time.</p></div>
+<div class="sat-polish-why-card"><span>02</span><h3>Score diagnosis</h3><p>The result points to the highest-return unit instead of leaving you guessing what to study next.</p></div>
+<div class="sat-polish-why-card"><span>03</span><h3>Test stamina</h3><p>Longer sessions build the focus needed to finish strong, not just start strong.</p></div>
+</div>
+<div class="card sat-polish-test-card">
+<div class="card-title">What You'll Get</div>
+<div class="pt-info-grid">
+<div class="pt-info-box"><div class="pt-info-num" style="color:#4f8ef7">54</div><div class="pt-info-lbl">English Questions</div></div>
+<div class="pt-info-box"><div class="pt-info-num" style="color:#a78bfa">44</div><div class="pt-info-lbl">Math Questions</div></div>
+<div class="pt-info-box"><div class="pt-info-num">200-800</div><div class="pt-info-lbl">Section Scores</div></div>
+<div class="pt-info-box"><div class="pt-info-num">400-1600</div><div class="pt-info-lbl">Total Score</div></div>
+</div>
+<p style="font-size:15px;color:var(--muted);line-height:1.6;margin-bottom:16px">This practice test samples all major SAT domains proportionally. Results show estimated section scores, a per-category performance breakdown, and a personalized study plan.</p>
+<div class="sat-test-note" style="background:rgba(79,142,247,.06);border:1px solid rgba(79,142,247,.2);border-radius:10px;padding:14px 16px;margin-bottom:20px;font-size:15px;color:var(--muted);line-height:1.5"> <strong style="color:var(--purple)">Note:</strong> Scores are estimates calibrated to the SAT scale. Actual scores depend on the College Board's specific test form and curve.</div>
+<div class="start-wrap" style="padding:0">
+<button class="btn full" id="pt-start-btn" type="button">Begin Practice Test -></button>
+</div>
+</div>
+</div>
+<!-- STRATEGY DRILLS TAB -->
+<div id="sat-tab-drills" style="display:none">
+<div class="drills-hero">
+<div class="drills-copy">
+<div class="eyebrow">Decision Training</div>
+<h2>Strategy <em>Drills</em></h2>
+<p>Most students lose points before they even start solving. These drills train the fast judgment that separates a calm test-taker from someone who gets trapped by time.</p>
+<div class="drills-metrics">
+<div data-drill-detail="The short timer forces first-read judgment. You learn whether the question is familiar enough to attack immediately or risky enough to skip."><strong>12s</strong><span>read the problem</span></div>
+<div data-drill-detail="Every prompt trains one of three test-day moves: solve now, skip for later, or make a controlled guess after eliminating what you can."><strong>3</strong><span>possible decisions</span></div>
+<div data-drill-detail="The goal is to stop losing minutes to questions that are not worth the time. Smart pacing protects your score."><strong>0</strong><span>time wasted spiraling</span></div>
+</div>
+</div>
+<div class="drills-focus-panel">
+<div class="drills-panel-kicker">What the drill measures</div>
+<div class="drills-signal" data-drill-detail="Choose Solve when you recognize the path fast enough to finish without burning the clock. This builds confidence on high-return questions.">
+<span>Solve</span>
+<p>You recognize the path quickly enough to earn the point.</p>
+</div>
+<div class="drills-signal" data-drill-detail="Choose Skip when the setup is unclear or too long. Skipping is not giving up. It is saving time for points you can win.">
+<span>Skip</span>
+<p>You protect time when the path is unclear.</p>
+</div>
+<div class="drills-signal" data-drill-detail="Choose Guess when elimination gives you a reasonable shot but full solving would cost too much time.">
+<span>Guess</span>
+<p>You make a controlled move when elimination is the best play.</p>
+</div>
+</div>
+</div>
+<div class="drills-why-grid">
+<div class="drills-why-card" data-drill-detail="Pattern speed is the habit of naming the problem type early: grammar rule, linear equation, evidence question, data table, or trap answer.">
+<span class="drills-why-num">01</span>
+<h3>Pattern speed</h3>
+<p>The SAT repeats structures. Strategy drills make you identify the type of problem before you spend energy solving it.</p>
+</div>
+<div class="drills-why-card" data-drill-detail="Time discipline matters because one stubborn question can steal the time needed for several easier points. The drill makes that tradeoff visible.">
+<span class="drills-why-num">02</span>
+<h3>Time discipline</h3>
+<p>Hard questions and easy questions can be worth the same. The drill teaches when to invest and when to move.</p>
+</div>
+<div class="drills-why-card" data-drill-detail="Score awareness means knowing whether your instincts are accurate. Results show if you are skipping too much, guessing too soon, or over-solving.">
+<span class="drills-why-num">03</span>
+<h3>Score awareness</h3>
+<p>Your result shows whether your instincts are helping your score or quietly leaking points under pressure.</p>
+</div>
+</div>
+<div class="drills-interaction-note" id="drills-interaction-note">Tap any drill box to see why that habit matters on test day.</div>
+<div class="drills-rhythm">
+<div>
+<span class="bc-label">|THE_LOOP_</span>
+<h3>Read. Decide. Review.</h3>
+<p>Each round is intentionally short. You are not proving that you can solve every question. You are building the judgment to spend test time where it has the highest return.</p>
+</div>
+<button class="btn-outline" type="button">Choose Section v</button>
+</div>
+<!-- Step 1: subject -->
+<div class="drills-start-block" id="drills-step-skill">
+<div class="drills-step-label">Step 1 - Choose a section</div>
+<div class="drills-section-grid">
+<div class="sat-unit-card eng-unit drills-section-card" onclick="drillsPickSubject('english',this)">
+<div class="unit-card-header"><span class="unit-icon"></span><div><div class="unit-title">English Drills</div><div class="unit-q-count">Reading, grammar, evidence, and synthesis decisions</div></div></div>
+<p>Best for training whether a question is a quick grammar rule, a trap answer, or a reading item that needs more time.</p>
+</div>
+<div class="sat-unit-card math-unit drills-section-card" onclick="drillsPickSubject('math',this)">
+<div class="unit-card-header"><span class="unit-icon"></span><div><div class="unit-title">Math Drills</div><div class="unit-q-count">Algebra, data, advanced math, geometry decisions</div></div></div>
+<p>Best for spotting whether to solve directly, plug in numbers, use answer choices, or skip before the clock drains.</p>
+</div>
+</div>
+</div>
+<!-- Step 2+3: count + start -->
+<div id="drills-step-start" style="display:none;margin-top:20px">
+<div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--purple);margin-bottom:14px;font-weight:600">Step 2 - How many drills?</div>
+<div class="card" style="margin-bottom:16px">
+<div style="text-align:center;margin-bottom:8px"><span class="count-num" id="drills-count-display">10</span></div>
+<div class="slider-wrap">
+<input id="drills-count-slider" max="30" min="5" oninput="document.getElementById('drills-count-display').textContent=this.value" style="width:100%" type="range" value="10"/>
+<div class="count-labels"><span>5</span><span>30</span></div>
+</div>
+</div>
+<button class="btn full" onclick="drillsLaunch()">Start Drills -></button>
+<button onclick="drillsResetStep()" style="display:block;width:100%;margin-top:10px;background:none;border:1px solid var(--border);color:var(--muted);border-radius:8px;padding:10px;cursor:pointer;font-size:13px"><- Change section</button>
+</div>
+</div>
+</div>
+<!-- SAT QUIZ -->
+<div class="sec" id="s-sat-quiz" style="padding-top:26px">
+<div class="card">
+<div class="prog-row">
+<span class="prog-lbl" id="sq-lbl">Question 1 of 50</span>
+<div class="test-top-actions">
+<div class="pt-timer" id="pt-timer-display" style="display:none"> <span id="pt-timer-text">32:00</span></div>
+<span class="score-pill" id="sq-score">Score: 0</span>
+<button class="test-pause-btn" id="test-pause-btn" onclick="toggleTestPause()">Pause</button>
+<button class="test-exit-btn" onclick="exitCurrentTest('sat')">Exit</button>
+</div>
+</div>
+<div class="prog-bar"><div class="prog-fill" id="sq-bar" style="width:0%"></div></div>
+<div id="sq-tag" style="position:relative"><span class="strategy-timer-badge" id="sq-timer"> 0s</span></div>
+<div id="sq-stimulus" style="display:none"></div>
+<div class="q-box"><p class="q-text" id="sq-text"></p></div>
+<div class="choices" id="sq-choices"></div>
+<div class="expl" id="sq-expl" style="display:none"></div>
+<button class="btn full" id="sq-next" onclick="window.satNextQ()" style="display:none">Next -&gt;</button>
+</div>
+</div>
+<!-- SAT RESULTS -->
+<div class="sec" id="s-sat-results" style="padding-top:26px">
+<div class="card" style="text-align:center">
+<div class="r-score" id="sr-score"></div>
+<div class="r-grade" id="sr-grade"></div>
+<p class="r-msg" id="sr-msg"></p>
+</div>
+<div class="strategy-card" id="sr-strategy" style="display:none">
+<div class="strategy-header">
+<div>
+<div class="strategy-title">Strategy Score</div>
+<div class="strategy-grade" id="sr-strat-grade"></div>
+</div>
+<div style="text-align:right">
+<div class="strategy-score-big" id="sr-strat-score">-</div>
+<div class="strategy-score-label">out of 100</div>
+</div>
+</div>
+<div class="strategy-components" id="sr-strat-breakdown"></div>
+<div class="strategy-lost-points" id="sr-strat-lost">
+<div class="strategy-lost-num" id="sr-strat-lost-num"></div>
+<div class="strategy-lost-label">estimated SAT points lost due to strategy mistakes</div>
+</div>
+</div>
+<div class="card">
+<div class="rev-hdr">Answer Review</div>
+<div id="sr-missed-banner" style="display:none;background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.18);border-radius:8px;padding:12px 16px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;gap:12px">
+<span id="sr-missed-text" style="font-size:15px;color:var(--muted)"></span>
+<button class="btn-outline" onclick="startMissedReview()" style="white-space:nowrap;padding:8px 14px;font-size:14px;flex-shrink:0">ðŸ” Drill Missed</button>
+</div>
+<div id="sr-review"></div>
+<div id="sr-next-action" style="background:rgba(59,130,246,.05);border:1px solid rgba(59,130,246,.15);border-radius:10px;padding:16px 18px;margin-bottom:14px;display:none">
+<div style="font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:6px">Recommended Next</div>
+<div id="sr-next-text" style="font-size:17px;color:var(--text);margin-bottom:10px"></div>
+<button class="btn" id="sr-next-btn" style="padding:10px 20px;font-size:15px"></button>
+</div>
+<div class="result-actions" style="margin-top:16px">
+<button class="btn-outline" onclick="window.startSAT(satSubject)">Same Section</button>
+<button class="btn full" onclick="showSAT()" style="flex:1">Pick New Unit</button>
+</div>
+</div>
+</div>
+<!-- STRATEGY DRILLS QUIZ -->
+<div class="sec" id="s-drills-quiz" style="padding-top:26px">
+<div class="card">
+<div class="prog-row">
+<span class="prog-lbl" id="dq-lbl">Drill 1 of 10</span>
+<span class="score-pill" id="dq-score">Decisions: 0</span>
+</div>
+<div class="prog-bar"><div class="prog-fill" id="dq-bar" style="width:0%"></div></div>
+<!-- Countdown ring -->
+<div style="text-align:center;margin:16px 0 8px">
+<div style="position:relative;display:inline-block">
+<svg height="80" viewbox="0 0 80 80" width="80">
+<circle cx="40" cy="40" fill="none" r="34" stroke="rgba(79,142,247,.1)" stroke-width="6"></circle>
+<circle cx="40" cy="40" fill="none" id="dq-ring" r="34" stroke="var(--purple)" stroke-dasharray="213.6" stroke-dashoffset="0" stroke-linecap="round" stroke-width="6" style="transition:stroke-dashoffset .9s linear,stroke .3s" transform="rotate(-90 40 40)"></circle>
+</svg>
+<div id="dq-countdown" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--purple)">12</div>
+</div>
+<div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:4px">seconds to decide</div>
+</div>
+<div id="dq-tag" style="margin-bottom:10px"></div>
+<div id="dq-stimulus" style="display:none"></div>
+<div class="q-box"><p class="q-text" id="dq-text"></p></div>
+<!-- Decision buttons -->
+<div id="dq-buttons" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:16px">
+<button class="drill-btn solve" onclick="drillDecide('solve')">
+<div style="font-size:20px;margin-bottom:4px"></div>
+<div style="font-weight:700;font-size:16px">Solve It</div>
+<div style="font-size:13px;opacity:.7">I know this</div></button>
+<button class="drill-btn skip" onclick="drillDecide('skip')">
+<div style="font-size:20px;margin-bottom:4px"></div>
+<div style="font-weight:700;font-size:16px">Skip It</div>
+<div style="font-size:13px;opacity:.7">Not worth it</div></button>
+<button class="drill-btn guess" onclick="drillDecide('guess')">
+<div style="font-size:20px;margin-bottom:4px"></div>
+<div style="font-weight:700;font-size:16px">Guess</div>
+<div style="font-size:13px;opacity:.7">No idea</div></button>
+</div>
+<!-- Feedback (shown after decision) -->
+<div id="dq-feedback" style="display:none;margin-top:14px;padding:14px;border-radius:10px;font-size:15px;line-height:1.6"></div>
+<button class="btn full" id="dq-next" onclick="drillNext()" style="display:none;margin-top:12px">Next -&gt;</button>
+</div>
+</div>
+<!-- STRATEGY DRILLS RESULTS -->
+<div class="sec" id="s-drills-results" style="padding-top:26px">
+<div class="card" style="text-align:center;padding:28px">
+<div id="dr-profile-icon" style="font-size:48px;margin-bottom:12px"></div>
+<div id="dr-profile-name" style="font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--purple);margin-bottom:6px">Balanced</div>
+<div id="dr-profile-desc" style="font-size:16px;color:var(--muted);line-height:1.6;margin-bottom:20px"></div>
+<div id="dr-stats" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px"></div>
+</div>
+<div class="card">
+<div class="card-title">Your Decision Breakdown</div>
+<div id="dr-breakdown"></div>
+<div class="result-actions" style="margin-top:16px">
+<button class="btn-outline" onclick="startDrills(window._drillSubject)">Drill Again</button>
+<button class="btn full" onclick="showSAT();showSATTab('drills')" style="flex:1">&lt;- Back</button>
+</div>
+</div>
+</div>
+<!-- MODULE TRANSITION -->
+<div class="sec" id="s-pt-transition" style="padding-top:26px;display:none">
+<div class="card">
+<div class="module-transition">
+<div class="module-transition-icon" id="mt-icon"></div>
+<div class="pt-module-badge" id="mt-badge">Section Complete</div>
+<div class="module-transition-title" id="mt-title">Module 1 Complete</div>
+<div id="mt-difficulty-tag"></div>
+<div class="module-transition-sub" id="mt-sub"></div>
+<div id="mt-stats" style="background:rgba(79,142,247,.06);border:1px solid rgba(79,142,247,.15);border-radius:12px;padding:16px;margin-bottom:24px;font-size:15px;color:var(--muted)"></div>
+<button class="btn full" id="mt-btn" onclick="continueToNextModule()" style="max-width:300px;margin:0 auto;font-size:17px;padding:15px 0">Continue -&gt;</button>
+</div>
+</div>
+</div>
+<!-- PRACTICE TEST RESULTS -->
+<div class="sec" id="s-sat-pt-results" style="padding-top:26px">
+<div class="card">
+<div class="score-display-wrap">
+<div class="total-score-label">Estimated SAT Score</div>
+<div class="total-score-display" id="pt-total-score">-</div>
+<div class="score-percentile" id="pt-percentile"></div>
+</div>
+<div class="score-section-row">
+<div class="score-section-box eng-box">
+<div class="score-section-label">English</div>
+<div class="score-section-num" id="pt-eng-score">-</div>
+<div class="score-section-sub" id="pt-eng-raw"></div>
+</div>
+<div class="score-section-box math-box">
+<div class="score-section-label">Math</div>
+<div class="score-section-num" id="pt-math-score">-</div>
+<div class="score-section-sub" id="pt-math-raw"></div>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="breakdown-section">
+<div class="breakdown-title eng">English - By Category</div>
+<div id="pt-eng-breakdown"></div>
+</div>
+<div style="border-top:1px solid var(--border);margin:16px 0;position:relative"><span style="position:absolute;top:-9px;left:50%;transform:translateX(-50%);background:var(--bg);padding:0 12px;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)">Math</span></div>
+<div class="breakdown-section" style="margin-top:16px">
+<div class="breakdown-title math">Math</div>
+<div id="pt-math-breakdown"></div>
+</div>
+</div>
+<div class="study-plan">
+<div class="study-plan-title">Your Personalized Study Plan</div>
+<div id="pt-study-items"></div>
+</div>
+<div class="card">
+<div class="rev-hdr">Full Answer Review</div>
+<div id="pt-review"></div>
+<div class="result-actions" style="margin-top:16px">
+<button class="btn-outline" onclick="window.startPracticeTest()">Retake Test</button>
+<button class="btn full" onclick="showSAT()" style="flex:1">Practice by Unit</button>
+</div>
+</div>
+</div>
+<!-- FLASHCARDS -->
+<div class="sec" id="s-fc" style="padding-top:0">
+<div class="bc-page-head">
+<div aria-hidden="true" class="bc-grid-bg"></div>
+<div class="bc-page-head-inner">
+<div>
+<span class="bc-label">|MODULE_03_ - VOCAB DECK</span>
+<h1>SAT<br/><em>Flashcards.</em></h1>
+<p class="bc-page-sub">Flip - mark - repeat. A focused deck of high-yield SAT vocabulary and word roots, built for short daily reps.</p>
+<div class="bc-page-meta">
+<span class="bc-pill">137_WORDS</span>
+<span class="bc-pill">72_ROOTS</span>
+<span class="bc-pill">SHUFFLE_MODE</span>
+</div>
+</div>
+<div class="bc-mini-orb"><svg style="width:100%;height:100%;overflow:visible" viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><defs><radialgradient cx="50%" cy="50%" id="bg-og-fc" r="50%"><stop offset="0%" stop-color="rgba(59,130,246,1)" stop-opacity="0.22"></stop><stop offset="100%" stop-color="transparent"></stop></radialgradient><radialgradient cx="32%" cy="28%" id="gl-og-fc" r="72%"><stop offset="0%" stop-color="rgba(59,130,246,1)" stop-opacity="0.14"></stop><stop offset="100%" stop-color="rgba(4,7,18,0.97)"></stop></radialgradient></defs><circle cx="100" cy="100" fill="url(#bg-og-fc)" r="94"></circle><circle cx="100" cy="100" fill="url(#gl-og-fc)" r="90" stroke="rgba(59,130,246,1)" stroke-opacity="0.35" stroke-width="1.5"></circle><ellipse cx="76" cy="60" fill="rgba(255,255,255,0.04)" rx="40" ry="22" transform="rotate(-18 76 60)"></ellipse><ellipse cx="103" cy="163" fill="rgba(0,0,0,0.38)" rx="50" ry="9"></ellipse><rect fill="rgba(59,130,246,0.06)" height="74" rx="7" stroke="rgba(99,102,241,0.32)" stroke-width="1.5" transform="rotate(-12 94 95)" width="104" x="42" y="58"></rect><rect fill="rgba(0,0,0,0.16)" height="74" rx="7" transform="rotate(-5 96 103)" width="104" x="44" y="66"></rect><rect fill="rgba(59,130,246,0.1)" height="74" rx="7" stroke="rgba(59,130,246,0.44)" stroke-width="1.8" transform="rotate(-5 96 101)" width="104" x="44" y="64"></rect><rect fill="rgba(0,0,0,0.22)" height="76" rx="8" width="110" x="46" y="70"></rect><rect fill="rgba(12,15,26,0.97)" height="76" rx="8" stroke="rgba(59,130,246,0.88)" stroke-width="2.5" width="112" x="44" y="66"></rect><rect fill="rgba(59,130,246,0.32)" height="3" rx="1.5" width="108" x="46" y="67"></rect><text fill="rgba(59,130,246,0.92)" font-family="'Playfair Display',Georgia,serif" font-size="38" font-style="italic" font-weight="700" text-anchor="middle" x="100" y="116">Q?</text><line stroke="rgba(59,130,246,0.22)" stroke-width="1.5" x1="60" x2="140" y1="124" y2="124"></line><text fill="rgba(99,130,200,0.44)" font-family="'Playfair Display',Georgia,serif" font-size="11" font-style="italic" text-anchor="middle" x="100" y="136">tap to reveal</text></svg></div>
+</div>
+</div>
+<!-- Deck picker -->
+<div class="fc-deck-tabs">
+<button class="fc-deck-btn active" id="fc-tab-vocab" onclick="fcSetDeck('vocab')">Vocabulary<br/><span style="font-size:13px;font-weight:400;opacity:.7">137 words</span></button>
+<button class="fc-deck-btn" id="fc-tab-roots" onclick="fcSetDeck('roots')"> Word Roots<br/><span style="font-size:13px;font-weight:400;opacity:.7">72 roots</span></button>
+</div>
+<!-- Progress row -->
+<div class="fc-meta">
+<span class="fc-counter" id="fc-counter">1 / 137</span>
+<div class="fc-progress-wrap"><div class="fc-progress-fill" id="fc-progress" style="width:0%"></div></div>
+<span class="fc-score-pill" id="fc-score"> 0</span>
+</div>
+<!-- Shuffle / filter row -->
+<div class="fc-shuffle-row">
+<button class="fc-shuffle-btn" onclick="fcShuffle()">Shuffle</button>
+<button class="fc-shuffle-btn" onclick="fcRestart()">Restart</button>
+<button class="fc-shuffle-btn" id="fc-review-btn" onclick="fcReviewMode()" style="display:none">Review missed</button>
+</div>
+<!-- Card -->
+<div class="fc-swipe-hint"><span>&lt;- Need practice</span><span>Got it -&gt;</span></div>
+<div class="fc-scene">
+<div class="fc-card" id="fc-card" onclick="fcFlip()">
+<!-- Front -->
+<div class="fc-face fc-front" id="fc-front">
+<div class="fc-tap-hint">Tap to reveal - swipe when done</div>
+<div class="fc-word" id="fc-word">-</div>
+<div class="fc-pos" id="fc-pos"></div>
+</div>
+<!-- Back -->
+<div class="fc-face fc-back" id="fc-back">
+<div class="fc-def" id="fc-def"></div>
+<div class="fc-ex" id="fc-ex"></div>
+</div>
+</div>
+</div>
+<!-- Know / Again buttons -->
+<div class="fc-controls">
+<button class="fc-btn fc-again" disabled="" id="fc-btn-again" onclick="fcMark(false)">Need more practice</button>
+<button class="fc-btn fc-knew" disabled="" id="fc-btn-knew" onclick="fcMark(true)">Got it</button>
+</div>
+<!-- Done state (hidden until finished) -->
+<div class="fc-done-box" id="fc-done" style="display:none">
+<div class="fc-done-icon"></div>
+<div class="fc-done-title">Deck Complete!</div>
+<div class="fc-stats-row">
+<div class="fc-stat"><div class="fc-stat-num" id="fc-done-knew" style="color:#4ade80">0</div><div class="fc-stat-lbl">Got it</div></div>
+<div class="fc-stat"><div class="fc-stat-num" id="fc-done-again" style="color:#f87171">0</div><div class="fc-stat-lbl">Need review</div></div>
+</div>
+<div class="fc-done-sub" id="fc-done-msg"></div>
+<div style="display:flex;gap:10px;margin-top:20px;justify-content:center">
+<button class="btn-outline" onclick="fcRestart()" style="flex:none;padding:10px 24px">Start over</button>
+<button class="btn" id="fc-done-review-btn" onclick="fcReviewMode()" style="flex:none;padding:10px 24px">Review missed</button>
+</div>
+</div>
+</div>
+<div class="sec" id="s-school" style="padding-top:0">
+<div class="bc-page-head">
+<div aria-hidden="true" class="bc-grid-bg"></div>
+<div class="bc-page-head-inner">
+<div>
+<span class="bc-label">|MODULE_05_ - ORIENTATION</span>
+<h1>The U.S. School<br/><em>System.</em></h1>
+<p class="bc-page-sub">The orientation international students actually need - credits, transcripts, counselors, and the path from K through 12 to college.</p>
+<div class="bc-page-meta">
+<span class="bc-pill">K_THROUGH_12</span>
+<span class="bc-pill">CREDITS_&amp;_TRANSCRIPTS</span>
+<span class="bc-pill">COLLEGE_PATH</span>
+</div>
+</div>
+<div class="bc-mini-orb"><svg style="width:100%;height:100%;overflow:visible" viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><defs><radialgradient cx="50%" cy="50%" id="bg-og-school" r="50%"><stop offset="0%" stop-color="rgba(59,130,246,1)" stop-opacity="0.22"></stop><stop offset="100%" stop-color="transparent"></stop></radialgradient><radialgradient cx="32%" cy="28%" id="gl-og-school" r="72%"><stop offset="0%" stop-color="rgba(59,130,246,1)" stop-opacity="0.14"></stop><stop offset="100%" stop-color="rgba(4,7,18,0.97)"></stop></radialgradient></defs><circle cx="100" cy="100" fill="url(#bg-og-school)" r="94"></circle><circle cx="100" cy="100" fill="url(#gl-og-school)" r="90" stroke="rgba(59,130,246,1)" stroke-opacity="0.35" stroke-width="1.5"></circle><ellipse cx="76" cy="60" fill="rgba(255,255,255,0.04)" rx="40" ry="22" transform="rotate(-18 76 60)"></ellipse><defs><lineargradient id="capg" x1="0%" x2="100%" y1="0%" y2="100%"><stop offset="0%" stop-color="rgba(147,197,253,0.72)"></stop><stop offset="100%" stop-color="rgba(29,78,216,0.62)"></stop></lineargradient></defs><ellipse cx="101" cy="166" fill="rgba(0,0,0,0.42)" rx="54" ry="9"></ellipse><polygon fill="rgba(18,36,96,0.62)" points="100,76 150,100 100,116 50,100" stroke="none"></polygon><polygon fill="url(#capg)" points="100,56 154,82 100,98 46,82" stroke="rgba(147,197,253,0.6)" stroke-width="1.8"></polygon><line stroke="rgba(200,228,255,0.42)" stroke-width="2.5" x1="100" x2="154" y1="56" y2="82"></line><ellipse cx="100" cy="98" fill="rgba(8,14,36,0.97)" rx="25" ry="11" stroke="rgba(59,130,246,0.55)" stroke-width="1.8"></ellipse><rect fill="rgba(25,70,200,0.28)" height="30" stroke="none" width="50" x="75" y="98"></rect><ellipse cx="100" cy="128" fill="rgba(25,70,200,0.34)" rx="25" ry="11" stroke="rgba(59,130,246,0.52)" stroke-width="1.8"></ellipse><circle cx="100" cy="56" fill="rgba(147,197,253,0.96)" r="5.5" stroke="rgba(255,255,255,0.42)" stroke-width="1.2"></circle><path d="M154,82 Q162,96 162,122" fill="none" stroke="rgba(200,228,255,0.68)" stroke-linecap="round" stroke-width="2.8"></path><circle cx="162" cy="126" fill="rgba(59,130,246,0.68)" r="8" stroke="rgba(147,197,253,0.88)" stroke-width="1.8"></circle><line stroke="rgba(147,197,253,0.62)" stroke-linecap="round" stroke-width="2" x1="157" x2="154" y1="133" y2="148"></line><line stroke="rgba(147,197,253,0.62)" stroke-linecap="round" stroke-width="2" x1="162" x2="162" y1="134" y2="150"></line><line stroke="rgba(147,197,253,0.62)" stroke-linecap="round" stroke-width="2" x1="167" x2="170" y1="133" y2="148"></line></svg></div>
+</div>
+</div>
+<!-- SCHOOL CONTENT: FLOWING EDITORIAL -->
+<div style="padding-bottom:60px">
+<!-- K-12 stats -->
+<div style="display:grid;grid-template-columns:repeat(4,1fr);margin:32px 0 0;border-bottom:1px solid rgba(59,130,246,.12)">
+<div style="padding:0 0 28px;border-right:1px solid rgba(59,130,246,.1)">
+<div class="bc-stat-num bc-text-gradient" style="font-size:clamp(40px,5vw,58px);line-height:1">13</div>
+<div class="bc-label" style="margin-top:6px;font-size:9px">YEARS_K_TO_12</div>
+</div>
+<div style="padding:0 0 28px 24px;border-right:1px solid rgba(59,130,246,.1)">
+<div class="bc-stat-num bc-text-gradient" style="font-size:clamp(40px,5vw,58px);line-height:1">4</div>
+<div class="bc-label" style="margin-top:6px;font-size:9px">HIGH_SCHOOL_YEARS</div>
+</div>
+<div style="padding:0 0 28px 24px;border-right:1px solid rgba(59,130,246,.1)">
+<div class="bc-stat-num bc-text-gradient" style="font-size:clamp(40px,5vw,58px);line-height:1">4.0</div>
+<div class="bc-label" style="margin-top:6px;font-size:9px">MAX_UNWEIGHTED_GPA</div>
+</div>
+<div style="padding:0 0 28px 24px">
+<div class="bc-stat-num bc-text-gradient" style="font-size:clamp(40px,5vw,58px);line-height:1">5.0</div>
+<div class="bc-label" style="margin-top:6px;font-size:9px">MAX_WEIGHTED_GPA</div>
+</div>
+</div>
+<p style="font-family:'Source Serif 4',Georgia,serif;font-size:18px;color:var(--muted);line-height:1.8;margin:28px 0 0">American education runs from kindergarten through 12th grade - called <strong style="color:var(--text)">K-12</strong>. Most students start at age 5 and graduate at 17 or 18. After that comes college, community college, trade school, or the workforce. Understanding how the system works gives you a real advantage from day one.</p>
+<!-- Divider -->
+<div style="height:1px;background:linear-gradient(90deg,rgba(59,130,246,.18),transparent);margin:52px 0 0"></div>
+<!-- The Three Stages -->
+<div style="padding:52px 0 0">
+<span class="bc-label">|THE_SYSTEM_</span>
+<h2 style="font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,52px);font-weight:900;margin:14px 0 8px;line-height:1.1">Three stages <em>before college.</em></h2>
+<p style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);margin:0 0 40px;line-height:1.7">After 12th grade, students can go to a 4-year university, a 2-year community college, or enter trade school or work directly.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;margin-bottom:36px">
+<div style="border-top:2px solid #4f8ef7;padding-top:20px">
+<div class="bc-label" style="color:#4f8ef7;margin-bottom:14px">ELEMENTARY</div>
+<div style="font-family:'Playfair Display',serif;font-size:clamp(36px,4vw,52px);font-weight:900;color:var(--text);line-height:1;margin-bottom:8px">K-5</div>
+<div style="font-size:15px;color:var(--muted);margin-bottom:8px">Ages 5-11</div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:15px;color:var(--muted);line-height:1.7">Core literacy, numeracy, and social development.</div>
+</div>
+<div style="border-top:2px solid #a78bfa;padding-top:20px">
+<div class="bc-label" style="color:#a78bfa;margin-bottom:14px">MIDDLE SCHOOL</div>
+<div style="font-family:'Playfair Display',serif;font-size:clamp(36px,4vw,52px);font-weight:900;color:var(--text);line-height:1;margin-bottom:8px">6-8</div>
+<div style="font-size:15px;color:var(--muted);margin-bottom:8px">Ages 11-14</div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:15px;color:var(--muted);line-height:1.7">Subject specialization begins. Students start choosing electives.</div>
+</div>
+<div style="border-top:2px solid #4ade80;padding-top:20px">
+<div class="bc-label" style="color:#4ade80;margin-bottom:14px">HIGH SCHOOL</div>
+<div style="font-family:'Playfair Display',serif;font-size:clamp(36px,4vw,52px);font-weight:900;color:var(--text);line-height:1;margin-bottom:8px">9-12</div>
+<div style="font-size:15px;color:var(--muted);margin-bottom:8px">Ages 14-18</div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:15px;color:var(--muted);line-height:1.7">GPA, AP classes, SAT, and college applications all happen here.</div>
+</div>
+</div>
+</div>
+<!-- Divider -->
+<div style="height:1px;background:linear-gradient(90deg,rgba(59,130,246,.18),transparent);margin:52px 0 0"></div>
+<!-- High School Years -->
+<div style="padding:52px 0 0">
+<span class="bc-label">|HIGH_SCHOOL_YEARS_</span>
+<h2 style="font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,52px);font-weight:900;margin:14px 0 8px;line-height:1.1">Four years. <em>Every one counts.</em></h2>
+<p style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);margin:0 0 40px;line-height:1.7">Each year has a name. Colleges and teachers use these terms constantly - know them.</p>
+<div style="display:flex;flex-direction:column;gap:0">
+<div style="display:flex;gap:24px;padding:22px 0;border-top:1px solid rgba(59,130,246,.12)">
+<div style="font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);font-weight:900;color:#4f8ef7;flex-shrink:0;width:56px;line-height:1">9</div>
+<div>
+<div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:var(--text);margin-bottom:6px">Freshman Year</div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);line-height:1.75">Your first year. The most important thing is establishing good habits and finding your footing. Don't fall behind early - it's much harder to recover later.</div>
+</div>
+</div>
+<div style="display:flex;gap:24px;padding:22px 0;border-top:1px solid rgba(59,130,246,.12)">
+<div style="font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);font-weight:900;color:#4f8ef7;flex-shrink:0;width:56px;line-height:1">10</div>
+<div>
+<div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:var(--text);margin-bottom:6px">Sophomore Year</div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);line-height:1.75">You take the <strong style="color:var(--text)">PSAT</strong> this year. Start thinking about which AP classes you want in 11th and 12th grade - and which subjects genuinely interest you.</div>
+</div>
+</div>
+<div style="display:flex;gap:24px;padding:22px 0;border-top:1px solid rgba(59,130,246,.12)">
+<div style="font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);font-weight:900;color:#4f8ef7;flex-shrink:0;width:56px;line-height:1">11</div>
+<div>
+<div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:var(--text);margin-bottom:6px">Junior Year - <em style="color:#a78bfa">The Most Important</em></div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);line-height:1.75">Colleges look at this year most closely. You take the <strong style="color:var(--text)">SAT or ACT</strong>, AP exams, and begin building your college list. Junior year GPA carries the most weight in applications.</div>
+</div>
+</div>
+<div style="display:flex;gap:24px;padding:22px 0;border-top:1px solid rgba(59,130,246,.12);border-bottom:1px solid rgba(59,130,246,.12)">
+<div style="font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);font-weight:900;color:#4f8ef7;flex-shrink:0;width:56px;line-height:1">12</div>
+<div>
+<div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:var(--text);margin-bottom:6px">Senior Year</div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);line-height:1.75">College applications, decisions, and graduation. Avoid "senioritis" - colleges can and do rescind acceptances if grades drop significantly in the final semester.</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Divider -->
+<div style="height:1px;background:linear-gradient(90deg,rgba(59,130,246,.18),transparent);margin:52px 0 0"></div>
+<!-- Class levels -->
+<div style="padding:52px 0 0">
+<span class="bc-label">|CLASS_LEVELS_</span>
+<h2 style="font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,52px);font-weight:900;margin:14px 0 8px;line-height:1.1">Not all classes <em>are equal.</em></h2>
+<p style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);margin:0 0 40px;line-height:1.7">The level you choose signals to colleges how hard you're pushing yourself. Colleges expect challenge in your strongest subjects.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:32px">
+<div style="border-top:2px solid rgba(136,153,180,.4);padding-top:20px">
+<div class="bc-label" style="margin-bottom:10px;font-size:9px">REGULAR_STANDARD</div>
+<div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:800;color:var(--text);margin-bottom:6px">Regular</div>
+<div style="font-size:13px;color:var(--muted);margin-bottom:12px">GPA weight: 1.0x</div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:15px;color:var(--muted);line-height:1.75">The default level. An A = 4.0 unweighted GPA. Fine for most subjects, but colleges expect you to take harder classes where you're capable.</div>
+</div>
+<div style="border-top:2px solid #4f8ef7;padding-top:20px">
+<div class="bc-label" style="color:#4f8ef7;margin-bottom:10px;font-size:9px">HONORS</div>
+<div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:800;color:var(--text);margin-bottom:6px">Honors</div>
+<div style="font-size:13px;color:var(--muted);margin-bottom:12px">GPA weight: ~1.1x</div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:15px;color:var(--muted);line-height:1.75">A step above regular. Faster pace, harder tests, more depth. An A in Honors = 4.5 on a weighted scale at most schools.</div>
+</div>
+<div style="border-top:2px solid #a78bfa;padding-top:20px">
+<div class="bc-label" style="color:#a78bfa;margin-bottom:10px;font-size:9px">AP_ADVANCED_PLACEMENT</div>
+<div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:800;color:var(--text);margin-bottom:6px">AP</div>
+<div style="font-size:13px;color:var(--muted);margin-bottom:12px">GPA weight: ~1.2x · College credit possible</div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:15px;color:var(--muted);line-height:1.75">College-level courses in high school. A score of 3-5 on the May AP exam can earn actual college credit - skipping that class in college and saving tuition money. Highly valued by admissions.</div>
+</div>
+<div style="border-top:2px solid #4ade80;padding-top:20px">
+<div class="bc-label" style="color:#4ade80;margin-bottom:10px;font-size:9px">IB_INTERNATIONAL_BACCALAUREATE</div>
+<div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:800;color:var(--text);margin-bottom:6px">IB</div>
+<div style="font-size:13px;color:var(--muted);margin-bottom:12px">Internationally recognized</div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:15px;color:var(--muted);line-height:1.75">A rigorous international program. Not all schools offer it. If your previous school was IB, those credits may transfer. Extremely well-respected by colleges worldwide.</div>
+</div>
+</div>
+</div>
+<!-- Divider -->
+<div style="height:1px;background:linear-gradient(90deg,rgba(59,130,246,.18),transparent);margin:52px 0 0"></div>
+<!-- School Year -->
+<div style="padding:52px 0 0">
+<span class="bc-label">|SCHOOL_YEAR_</span>
+<h2 style="font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,52px);font-weight:900;margin:14px 0 8px;line-height:1.1">How the year <em>is structured.</em></h2>
+<p style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);margin:0 0 40px;line-height:1.7">The school year runs late August or early September through late May or June - roughly 10 months. Most high schools use two semesters of ~18 weeks each.</p>
+<div style="display:flex;flex-direction:column;gap:0">
+<div style="display:flex;gap:24px;padding:20px 0;border-top:1px solid rgba(59,130,246,.12);align-items:flex-start">
+<div style="font-family:'Playfair Display',serif;font-size:15px;font-weight:800;color:#4f8ef7;flex-shrink:0;width:100px">Semester 1</div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);line-height:1.7">September to January. Ends with final exams before winter break.</div>
+</div>
+<div style="display:flex;gap:24px;padding:20px 0;border-top:1px solid rgba(59,130,246,.12);align-items:flex-start">
+<div style="font-family:'Playfair Display',serif;font-size:15px;font-weight:800;color:#4f8ef7;flex-shrink:0;width:100px">Semester 2</div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);line-height:1.7">January to May/June. Ends with final exams and AP exams in May.</div>
+</div>
+<div style="display:flex;gap:24px;padding:20px 0;border-top:1px solid rgba(59,130,246,.12);align-items:flex-start">
+<div style="font-family:'Playfair Display',serif;font-size:15px;font-weight:800;color:#4f8ef7;flex-shrink:0;width:100px">Summer</div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);line-height:1.7">June through August. No required school, but many students take summer courses, do internships, or build their extracurricular profile.</div>
+</div>
+<div style="display:flex;gap:24px;padding:20px 0;border-top:1px solid rgba(59,130,246,.12);border-bottom:1px solid rgba(59,130,246,.12);align-items:flex-start">
+<div style="font-family:'Playfair Display',serif;font-size:15px;font-weight:800;color:#4f8ef7;flex-shrink:0;width:100px">Breaks</div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);line-height:1.7">Thanksgiving (late November), Winter Break (~2 weeks Dec/Jan), Spring Break (~1 week March/April).</div>
+</div>
+</div>
+</div>
+<!-- Divider -->
+<div style="height:1px;background:linear-gradient(90deg,rgba(59,130,246,.18),transparent);margin:52px 0 0"></div>
+<!-- Classroom Culture -->
+<div style="padding:52px 0 0">
+<span class="bc-label">|CLASSROOM_CULTURE_</span>
+<h2 style="font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,52px);font-weight:900;margin:14px 0 8px;line-height:1.1">What's different <em>here.</em></h2>
+<p style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);margin:0 0 40px;line-height:1.7">If you studied in another country, some things about American classrooms will surprise you.</p>
+<div style="display:flex;flex-direction:column;gap:0">
+<div style="padding:22px 0;border-top:1px solid rgba(59,130,246,.12)">
+<div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:var(--text);margin-bottom:8px">Participation is graded</div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);line-height:1.75">In many classes, speaking up in discussion counts toward your grade. Staying silent and acing every test may still leave you with a B instead of an A.</div>
+</div>
+<div style="padding:22px 0;border-top:1px solid rgba(59,130,246,.12)">
+<div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:var(--text);margin-bottom:8px">Teachers are approachable</div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);line-height:1.75">Going to talk to your teacher before or after class is normal and expected. Asking for help is seen as a sign of effort, not weakness.</div>
+</div>
+<div style="padding:22px 0;border-top:1px solid rgba(59,130,246,.12)">
+<div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:var(--text);margin-bottom:8px">Academic honesty is taken very seriously</div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);line-height:1.75">Copying homework, plagiarism, or cheating can result in a zero, suspension, or expulsion. Always cite your sources. Always use your own words.</div>
+</div>
+<div style="padding:22px 0;border-top:1px solid rgba(59,130,246,.12)">
+<div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:var(--text);margin-bottom:8px">Extracurriculars matter</div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);line-height:1.75">Sports, clubs, student government, community service - these are not optional in the eyes of colleges. A 4.0 with no activities is less competitive than a 3.8 with genuine involvement.</div>
+</div>
+<div style="padding:22px 0;border-top:1px solid rgba(59,130,246,.12);border-bottom:1px solid rgba(59,130,246,.12)">
+<div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:var(--text);margin-bottom:8px">Deadlines are firm</div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);line-height:1.75">Late work is typically penalized or not accepted. Managing your schedule and submitting on time is your responsibility - teachers will not chase you.</div>
+</div>
+</div>
+</div>
+<!-- Divider -->
+<div style="height:1px;background:linear-gradient(90deg,rgba(59,130,246,.18),transparent);margin:52px 0 0"></div>
+<!-- Testing Timeline -->
+<div style="padding:52px 0 0">
+<span class="bc-label">|TESTING_TIMELINE_</span>
+<h2 style="font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,52px);font-weight:900;margin:14px 0 8px;line-height:1.1">When to take <em>what.</em></h2>
+<p style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);margin:0 0 40px;line-height:1.7">American students take several major standardized tests throughout high school.</p>
+<div style="display:flex;flex-direction:column;gap:0">
+<div style="display:flex;gap:24px;padding:22px 0;border-top:1px solid rgba(59,130,246,.12)">
+<div style="font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,32px);font-weight:900;color:#4f8ef7;flex-shrink:0;width:80px;line-height:1">G10</div>
+<div>
+<div style="font-family:'Playfair Display',serif;font-size:19px;font-weight:800;color:var(--text);margin-bottom:6px">PSAT 10</div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);line-height:1.75">A practice version of the SAT. Good for getting used to the format. Scores don't count for college admissions.</div>
+</div>
+</div>
+<div style="display:flex;gap:24px;padding:22px 0;border-top:1px solid rgba(59,130,246,.12)">
+<div style="font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,32px);font-weight:900;color:#4f8ef7;flex-shrink:0;width:80px;line-height:1">G11</div>
+<div>
+<div style="font-family:'Playfair Display',serif;font-size:19px;font-weight:800;color:var(--text);margin-bottom:6px">PSAT/NMSQT + SAT + AP Exams</div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);line-height:1.75">The PSAT this year counts for <strong style="color:var(--text)">National Merit Scholarship</strong> eligibility. Take the SAT for the first time in spring. Sit AP exams in your AP subjects in May.</div>
+</div>
+</div>
+<div style="display:flex;gap:24px;padding:22px 0;border-top:1px solid rgba(59,130,246,.12)">
+<div style="font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,32px);font-weight:900;color:#4f8ef7;flex-shrink:0;width:80px;line-height:1">G12</div>
+<div>
+<div style="font-family:'Playfair Display',serif;font-size:19px;font-weight:800;color:var(--text);margin-bottom:6px">SAT Retakes + AP Exams</div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);line-height:1.75">SAT retakes if needed in fall. Submit scores with college applications. More AP exams in May.</div>
+</div>
+</div>
+<div style="display:flex;gap:24px;padding:22px 0;border-top:1px solid rgba(59,130,246,.12);border-bottom:1px solid rgba(59,130,246,.12)">
+<div style="font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,32px);font-weight:900;color:#4f8ef7;flex-shrink:0;width:80px;line-height:1">Any</div>
+<div>
+<div style="font-family:'Playfair Display',serif;font-size:19px;font-weight:800;color:var(--text);margin-bottom:6px">ACT</div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);line-height:1.75">An alternative to the SAT. Same purpose, slightly different format - includes a Science section. Most colleges accept both equally.</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Divider -->
+<div style="height:1px;background:linear-gradient(90deg,rgba(79,70,229,.22),transparent);margin:52px 0 0"></div>
+<!-- New to the US -->
+<div style="padding:52px 0 0">
+<span class="bc-label" style="color:#a78bfa">|NEW_TO_THE_US_</span>
+<h2 style="font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,52px);font-weight:900;margin:14px 0 8px;line-height:1.1">Specifically for students <em style="color:#a78bfa">new here.</em></h2>
+<p style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);margin:0 0 40px;line-height:1.7">Coming from another country adds an extra layer of complexity. These are the most common things new students don't know.</p>
+<div style="display:flex;flex-direction:column;gap:0">
+<div style="padding:22px 0;border-top:1px solid rgba(79,70,229,.15)">
+<div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:var(--text);margin-bottom:8px">ESL / ELL Programs</div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);line-height:1.75">If English isn't your first language, most schools offer ESL/ELL support. Don't be embarrassed to use it - it's designed to help you succeed faster.</div>
+</div>
+<div style="padding:22px 0;border-top:1px solid rgba(79,70,229,.15)">
+<div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:var(--text);margin-bottom:8px">Your credits may transfer</div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);line-height:1.75">If you took rigorous courses in your home country, the school counselor can evaluate your transcripts and may give you credit for subjects you already completed.</div>
+</div>
+<div style="padding:22px 0;border-top:1px solid rgba(79,70,229,.15)">
+<div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:var(--text);margin-bottom:8px">Find your counselor on Day 1</div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);line-height:1.75">Every student is assigned a school counselor. They help with scheduling, college planning, and navigating the system. Use them early and often - they are one of your most valuable resources.</div>
+</div>
+<div style="padding:22px 0;border-top:1px solid rgba(79,70,229,.15)">
+<div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:var(--text);margin-bottom:8px">When you enroll matters</div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);line-height:1.75">If you arrive mid-year, you may miss the registration window for AP or advanced classes. Ask specifically about this. Some schools allow exceptions for new students.</div>
+</div>
+<div style="padding:22px 0;border-top:1px solid rgba(79,70,229,.15);border-bottom:1px solid rgba(79,70,229,.15)">
+<div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:var(--text);margin-bottom:8px">Public school is free</div>
+<div style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;color:var(--muted);line-height:1.75">Public K-12 education in the US is fully funded by taxes - no tuition. Some schools may ask for optional activity fees, but education itself costs nothing.</div>
+</div>
+</div>
+</div>
+<!-- Bottom nav -->
+<div style="display:flex;gap:10px;padding-top:48px">
+<button class="btn full" onclick="openToolPage('s-gpa','nav-gpa')" style="flex:1">Next: GPA &amp; Courses -></button>
+</div>
+</div>
+</div>
+<div class="sec" id="s-college" style="padding-top:0">
+<div class="bc-page-head">
+<div aria-hidden="true" class="bc-grid-bg"></div>
+<div class="bc-page-head-inner">
+<div>
+<span class="bc-label">|MODULE_06_ - UNIVERSITY SELECTION</span>
+<h1>Choose the<br/><em>right university.</em></h1>
+<p class="bc-page-sub">Understand what universities actually evaluate, build a balanced list, and search U.S. schools by fit, cost, location, selectivity, and academic strengths.</p>
+<div class="bc-page-meta">
+<span class="bc-pill">ADMISSIONS_STRATEGY</span>
+<span class="bc-pill">COLLEGE_SEARCH</span>
+<span class="bc-pill">DREAM_SCHOOL_PLAN</span>
+</div>
+</div>
+<div class="bc-mini-orb"><svg style="width:100%;height:100%;overflow:visible" viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><defs><radialgradient cx="50%" cy="50%" id="bg-og-college" r="50%"><stop offset="0%" stop-color="rgba(245,158,11,1)" stop-opacity="0.2"></stop><stop offset="100%" stop-color="transparent"></stop></radialgradient><lineargradient id="collegeTower" x1="0%" x2="100%" y1="0%" y2="100%"><stop offset="0%" stop-color="rgba(251,191,36,.84)"></stop><stop offset="55%" stop-color="rgba(56,189,248,.56)"></stop><stop offset="100%" stop-color="rgba(244,114,182,.42)"></stop></lineargradient></defs><circle cx="100" cy="100" fill="url(#bg-og-college)" r="94"></circle><circle cx="100" cy="100" fill="rgba(5,10,24,.92)" r="89" stroke="rgba(245,158,11,.42)" stroke-width="1.5"></circle><path d="M46 141h108v14H46z" fill="rgba(245,158,11,.18)" stroke="rgba(245,158,11,.42)"></path><path d="M58 78h84v16H58z" fill="url(#collegeTower)" stroke="rgba(255,255,255,.22)"></path><path d="M100 43l58 35H42z" fill="rgba(245,158,11,.28)" stroke="rgba(245,158,11,.58)" stroke-width="2"></path><rect fill="rgba(56,189,248,.22)" height="47" rx="2" stroke="rgba(186,230,253,.34)" width="16" x="66" y="94"></rect><rect fill="rgba(245,158,11,.18)" height="47" rx="2" stroke="rgba(253,230,138,.34)" width="16" x="92" y="94"></rect><rect fill="rgba(244,114,182,.18)" height="47" rx="2" stroke="rgba(251,207,232,.34)" width="16" x="118" y="94"></rect><circle cx="100" cy="70" fill="rgba(5,10,24,.84)" r="10" stroke="rgba(253,230,138,.7)" stroke-width="2"></circle><path d="M100 60v10l7 4" fill="none" stroke="rgba(253,230,138,.82)" stroke-linecap="round" stroke-width="2"></path></svg></div>
+</div>
+</div>
+<div class="college-studio">
+<div class="college-panel">
+<div class="college-kicker">What Matters Most</div>
+<h2 class="college-title">Admissions starts with the transcript.</h2>
+<p class="college-copy">Across four-year colleges, grades in college-prep courses, total grades, and strength of curriculum are consistently the top admission factors. Essays, recommendations, activities, character, and demonstrated interest can decide the outcome once your academics are in range.</p>
+<div class="college-grid" style="margin-top:24px">
+<div class="college-factor"><strong>1. Academic performance</strong><span>Protect GPA first. A strong transcript in core classes is more persuasive than one last-minute test score.</span></div>
+<div class="college-factor"><strong>2. Rigor with judgment</strong><span>Take the hardest courses you can handle well. Colleges like challenge, but not a schedule that breaks your grades.</span></div>
+<div class="college-factor"><strong>3. Proof of direction</strong><span>Activities, essays, projects, jobs, and recommendations should show what you care about and how you act on it.</span></div>
+</div>
+</div>
+<div class="college-panel alt">
+<div class="college-kicker">Dream University Strategy</div>
+<h2 class="college-title">Build a profile that makes sense.</h2>
+<div class="college-grid two">
+<div class="college-factor"><strong>Match your spike to the school.</strong><span>If a school is known for engineering, business, medicine, public policy, or art, your application should show evidence that you are already moving in that direction.</span></div>
+<div class="college-factor"><strong>Use the reach-target-safety system.</strong><span>A healthy list usually has 3-4 reach schools, 4-6 target schools, and 2-3 likely schools you would genuinely attend.</span></div>
+<div class="college-factor"><strong>Do not chase prestige blindly.</strong><span>Fit includes cost, location, teaching style, class size, majors, support, outcomes, and whether you can picture yourself doing real work there.</span></div>
+<div class="college-factor"><strong>Make every essay specific.</strong><span>Replace generic praise with concrete details: courses, labs, professors, student groups, campus programs, and why those connect to your goals.</span></div>
+</div>
+<div class="college-plan">
+<div class="college-plan-card"><h3>Reach</h3><p>Your stats are below or near the middle range, or the admit rate is very low. Apply only when your story is unusually strong.</p><div class="college-empty">Aim for 3-4.</div><div class="college-plan-list" id="college-list-reach"></div></div>
+<div class="college-plan-card"><h3>Target</h3><p>Your grades, rigor, and scores are in range. Still not guaranteed, but your application has a realistic path.</p><div class="college-empty">Aim for 4-6.</div><div class="college-plan-list" id="college-list-target"></div></div>
+<div class="college-plan-card"><h3>Likely</h3><p>You are above the typical admitted range and can afford it. A likely school should still be a place you would be happy to attend.</p><div class="college-empty">Aim for 2-3 you would attend.</div><div class="college-plan-list" id="college-list-likely"></div></div>
+</div>
+</div>
+<div class="college-panel">
+<div class="college-kicker">University Search</div>
+<h2 class="college-title">Find universities by fit.</h2>
+<p class="college-copy">Search the U.S. Department of Education College Scorecard database, filter by selectivity and region, then add schools to your reach, target, or likely list. Admission data changes every cycle, so use each card as a planning snapshot and verify on the university's official admissions page or Common Data Set before applying.</p>
+<div class="college-controls">
+<input class="college-input" id="college-search-input" oninput="renderCollegeSearch()" placeholder="Search name, state, city, major, or note..."/>
+<select class="college-select" id="college-region-filter" onchange="renderCollegeSearch()"><option value="all">All regions</option><option>Northeast</option><option>South</option><option>Midwest</option><option>West</option></select>
+<select class="college-select" id="college-selectivity-filter" onchange="renderCollegeSearch()"><option value="all">All selectivity</option><option>Ultra Reach</option><option>Reach</option><option>Target</option><option>Likely</option></select>
+<select class="college-select" id="college-major-filter" onchange="renderCollegeSearch()"><option value="all">All strengths</option><option value="Engineering">Engineering</option><option value="Computer Science">Computer Science</option><option value="Business">Business</option><option value="Pre-Med">Pre-Med</option><option value="Liberal Arts">Liberal Arts</option><option value="Public Policy">Public Policy</option><option value="Arts">Arts</option></select>
+</div>
+<div class="college-results-head"><span id="college-result-count">0 universities</span><span>Tip: add at least 2 likely schools you actually like.</span></div>
+<div class="college-results" id="college-results"></div>
+</div>
+</div>
+</div>
+<div class="sec" id="s-gpa" style="padding-top:0">
+<div class="bc-page-head">
+<div aria-hidden="true" class="bc-grid-bg"></div>
+<div class="bc-page-head-inner">
+<div>
+<span class="bc-label">GPA and courses</span>
+<h1>GPA &amp;<br/><em>Course Selection.</em></h1>
+<p class="bc-page-sub">Understand, calculate, and strategically manage your GPA. See how AP and Honors classes compound - and what colleges actually look at.</p>
+<div class="bc-page-meta">
+<span class="bc-pill">4.0 scale</span>
+<span class="bc-pill">Weighted GPA</span>
+<span class="bc-pill">AP strategy</span>
+</div>
+</div>
+<div class="bc-mini-orb"><svg style="width:100%;height:100%;overflow:visible" viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><defs><radialgradient cx="50%" cy="50%" id="bg-og-gpa" r="50%"><stop offset="0%" stop-color="rgba(34,197,94,1)" stop-opacity="0.22"></stop><stop offset="100%" stop-color="transparent"></stop></radialgradient><radialgradient cx="32%" cy="28%" id="gl-og-gpa" r="72%"><stop offset="0%" stop-color="rgba(34,197,94,1)" stop-opacity="0.14"></stop><stop offset="100%" stop-color="rgba(4,7,18,0.97)"></stop></radialgradient></defs><circle cx="100" cy="100" fill="url(#bg-og-gpa)" r="94"></circle><circle cx="100" cy="100" fill="url(#gl-og-gpa)" r="90" stroke="rgba(34,197,94,1)" stroke-opacity="0.35" stroke-width="1.5"></circle><ellipse cx="76" cy="60" fill="rgba(255,255,255,0.04)" rx="40" ry="22" transform="rotate(-18 76 60)"></ellipse><defs><lineargradient id="gbar1" x1="0%" x2="100%" y1="0%" y2="0%"><stop offset="0%" stop-color="rgba(34,197,94,0.82)"></stop><stop offset="100%" stop-color="rgba(21,128,61,0.72)"></stop></lineargradient><lineargradient id="gbar2" x1="0%" x2="100%" y1="0%" y2="0%"><stop offset="0%" stop-color="rgba(59,130,246,0.74)"></stop><stop offset="100%" stop-color="rgba(37,99,235,0.64)"></stop></lineargradient></defs><rect fill="rgba(0,0,0,0.36)" height="118" rx="5" width="94" x="57" y="44"></rect><rect fill="rgba(8,16,38,0.93)" height="118" rx="5" stroke="rgba(34,197,94,0.52)" stroke-width="1.8" width="96" x="52" y="38"></rect><rect fill="rgba(34,197,94,0.22)" height="4" rx="2" width="92" x="54" y="39"></rect><polygon fill="rgba(10,20,42,0.97)" points="120,38 148,38 148,58" stroke="rgba(34,197,94,0.3)" stroke-width="1"></polygon><line stroke="rgba(34,197,94,0.42)" stroke-width="1" x1="120" x2="148" y1="38" y2="58"></line><line stroke="rgba(34,197,94,0.62)" stroke-linecap="round" stroke-width="2.5" x1="64" x2="136" y1="60" y2="60"></line><rect fill="url(#gbar1)" height="13" rx="3" width="72" x="64" y="72"></rect><rect fill="rgba(255,255,255,0.18)" height="5" rx="2" width="22" x="66" y="73"></rect><text fill="rgba(255,255,255,0.96)" font-family="'Playfair Display',serif" font-size="14" font-weight="700" x="142" y="83">A+</text><rect fill="url(#gbar2)" height="13" rx="3" width="62" x="64" y="91"></rect><rect fill="rgba(255,255,255,0.18)" height="5" rx="2" width="20" x="66" y="92"></rect><text fill="rgba(255,255,255,0.96)" font-family="'Playfair Display',serif" font-size="14" font-weight="700" x="132" y="102">A</text><rect fill="url(#gbar1)" height="13" opacity="0.76" rx="3" width="67" x="64" y="110"></rect><rect fill="rgba(255,255,255,0.15)" height="5" rx="2" width="20" x="66" y="111"></rect><text fill="rgba(255,255,255,0.92)" font-family="'Playfair Display',serif" font-size="14" font-weight="700" x="137" y="121">A-</text><rect fill="rgba(34,197,94,0.18)" height="18" rx="4" stroke="rgba(34,197,94,0.58)" stroke-width="1.5" width="76" x="62" y="128"></rect><text fill="rgba(34,197,94,0.97)" font-family="'Playfair Display',serif" font-size="14" font-weight="700" text-anchor="middle" x="100" y="141">4.0 GPA</text></svg></div>
+</div>
+</div>
+<div class="card">
+<div class="card-title">What Is GPA?</div>
+<p style="color:var(--muted);font-size:16px;line-height:1.75;margin-bottom:12px">GPA stands for <strong style="color:var(--text)">Grade Point Average</strong> - a single number representing your academic performance across all classes. Most US schools use a <strong style="color:var(--text)">4.0 scale</strong>, where A = 4.0 and F = 0.</p>
+<p style="color:var(--muted);font-size:16px;line-height:1.75;margin-bottom:0">Colleges treat GPA as one of their primary filters. A strong GPA shows consistency - not just that you can do well once, but that you perform reliably across every subject over multiple years.</p>
+</div>
+<div class="card">
+<div class="card-title">Letter Grades to Grade Points</div>
+<div class="gpa-grade-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin-bottom:12px">
+<div class="gpa-grade-card" style="text-align:center;padding:12px 6px;background:rgba(74,222,128,.07);border:1px solid rgba(74,222,128,.2);border-radius:10px"><div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:#4ade80">A / A+</div><div style="font-size:13px;color:var(--muted);margin-top:2px">4.0 - 90-100%</div></div>
+<div class="gpa-grade-card" style="text-align:center;padding:12px 6px;background:rgba(74,222,128,.04);border:1px solid rgba(74,222,128,.12);border-radius:10px"><div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:#4ade80">A-</div><div style="font-size:13px;color:var(--muted);margin-top:2px">3.7 - 90-92%</div></div>
+<div class="gpa-grade-card" style="text-align:center;padding:12px 6px;background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.15);border-radius:10px"><div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:var(--purple)">B+</div><div style="font-size:13px;color:var(--muted);margin-top:2px">3.3 - 87-89%</div></div>
+<div class="gpa-grade-card" style="text-align:center;padding:12px 6px;background:rgba(59,130,246,.04);border:1px solid rgba(59,130,246,.1);border-radius:10px"><div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:var(--purple)">B</div><div style="font-size:13px;color:var(--muted);margin-top:2px">3.0 - 83-86%</div></div>
+<div class="gpa-grade-card" style="text-align:center;padding:12px 6px;background:rgba(167,139,250,.05);border:1px solid rgba(167,139,250,.15);border-radius:10px"><div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:#a78bfa">B- / C+</div><div style="font-size:13px;color:var(--muted);margin-top:2px">2.7 / 2.3</div></div>
+<div class="gpa-grade-card" style="text-align:center;padding:12px 6px;background:rgba(167,139,250,.04);border:1px solid rgba(167,139,250,.1);border-radius:10px"><div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:#a78bfa">C</div><div style="font-size:13px;color:var(--muted);margin-top:2px">2.0 - 73-76%</div></div>
+<div class="gpa-grade-card" style="text-align:center;padding:12px 6px;background:rgba(248,113,113,.05);border:1px solid rgba(248,113,113,.15);border-radius:10px"><div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:#f87171">D</div><div style="font-size:13px;color:var(--muted);margin-top:2px">1.0 - 60-69%</div></div>
+<div class="gpa-grade-card" style="text-align:center;padding:12px 6px;background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.2);border-radius:10px"><div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:#f87171">F</div><div style="font-size:13px;color:var(--muted);margin-top:2px">0.0 - Below 60%</div></div>
+</div>
+<p style="font-size:14px;color:var(--muted);margin-bottom:0">Not all schools use +/- grades. Some only use A, B, C, D, F. Check with your school counselor.</p>
+</div>
+<div class="card">
+<div class="card-title">Weighted vs Unweighted GPA</div>
+<p style="color:var(--muted);font-size:16px;line-height:1.75;margin-bottom:14px">There are two types of GPA - and both matter.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">
+<div style="background:rgba(59,130,246,.05);border:1px solid rgba(59,130,246,.18);border-radius:12px;padding:16px">
+<div style="font-family:'Playfair Display',serif;font-weight:700;font-size:15px;color:var(--text);margin-bottom:8px">Unweighted</div>
+<div style="font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:10px">Max = <strong style="color:var(--text)">4.0</strong>. Every class is equal - Regular, Honors, and AP all treated the same.</div>
+<div style="font-size:12px;padding:8px 10px;background:rgba(255,255,255,.03);border-radius:8px;color:var(--muted)">A in Regular = 4.0<br/>A in AP = 4.0</div>
+</div>
+<div style="background:rgba(99,102,241,.05);border:1px solid rgba(99,102,241,.18);border-radius:12px;padding:16px">
+<div style="font-family:'Playfair Display',serif;font-weight:700;font-size:15px;color:var(--text);margin-bottom:8px">Weighted</div>
+<div style="font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:10px">Max = <strong style="color:var(--text)">4.5-5.0</strong>. Harder classes earn bonus points. Rewards taking challenges.</div>
+<div style="font-size:12px;padding:8px 10px;background:rgba(255,255,255,.03);border-radius:8px;color:var(--muted)">A in Regular = 4.0<br/>A in AP = 5.0</div>
+</div>
+</div>
+<div style="background:rgba(79,70,229,.05);border:1px solid rgba(79,70,229,.15);border-radius:10px;padding:14px;font-size:14px;color:var(--muted);line-height:1.65">
+<strong style="color:var(--text)">Which matters more?</strong>Most colleges recalculate GPA with their own formula. What matters: are you taking hard classes AND doing well in them? A 3.7 unweighted in all AP is more impressive than a 4.0 in all standard classes.
+    </div>
+</div>
+<div class="card">
+<div class="card-title">GPA Calculator</div>
+<p style="color:var(--muted);font-size:15px;margin-bottom:14px">Add your classes - select grade received and course type. Your weighted and unweighted GPA will update automatically.</p>
+<div id="gpa-rows" style="display:flex;flex-direction:column;gap:8px;margin-bottom:12px"></div>
+<button class="btn-outline" onclick="addGPARow()" style="width:100%;margin-bottom:16px;font-size:15px">+ Add Class</button>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+<div style="background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.18);border-radius:10px;padding:16px;text-align:center">
+<div class="gpa-result-label" style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:6px">Unweighted GPA</div>
+<div id="gpa-unweighted" style="font-family:'Playfair Display',serif;font-size:36px;font-weight:900;color:var(--text)">-</div>
+<div style="font-size:12px;color:var(--muted)">out of 4.0</div>
+</div>
+<div style="background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.18);border-radius:10px;padding:16px;text-align:center">
+<div class="gpa-result-label" style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:6px">Weighted GPA</div>
+<div id="gpa-weighted" style="font-family:'Playfair Display',serif;font-size:36px;font-weight:900;color:var(--purple)">-</div>
+<div style="font-size:12px;color:var(--muted)">out of 5.0</div>
+</div>
+</div>
+<div id="gpa-context" style="display:none;font-size:14px;color:var(--muted);text-align:center;line-height:1.6;padding:10px;background:rgba(255,255,255,.02);border-radius:8px"></div>
+</div>
+<div class="card">
+<div class="card-title">What Colleges Actually Look At</div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="padding:14px 16px;background:rgba(255,255,255,.02);border-radius:8px;border-left:3px solid var(--purple)">
+<strong style="color:var(--text);display:block;margin-bottom:3px">Course rigor over raw GPA</strong>
+<span style="font-size:14px;color:var(--muted)">A 3.8 with all AP/Honors is typically better than a 4.0 in all standard classes. Colleges want to see you challenge yourself.</span>
+</div>
+<div style="padding:14px 16px;background:rgba(255,255,255,.02);border-radius:8px;border-left:3px solid var(--purple)">
+<strong style="color:var(--text);display:block;margin-bottom:3px">Upward trend matters</strong>
+<span style="font-size:14px;color:var(--muted)">Grades improving from 9th to 11th grade is a positive signal. A downward trend - even with a good overall GPA - raises concerns.</span>
+</div>
+<div style="padding:14px 16px;background:rgba(255,255,255,.02);border-radius:8px;border-left:3px solid var(--purple)">
+<strong style="color:var(--text);display:block;margin-bottom:3px">Junior year is weighted most</strong>
+<span style="font-size:14px;color:var(--muted)">When you apply in fall of senior year, junior grades are the most recent full year colleges have. They carry the most weight.</span>
+</div>
+<div style="padding:14px 16px;background:rgba(255,255,255,.02);border-radius:8px;border-left:3px solid var(--purple)">
+<strong style="color:var(--text);display:block;margin-bottom:3px">Relevant subjects for your major</strong>
+<span style="font-size:14px;color:var(--muted)">Engineering -&gt;strong Math and Physics. Pre-med -&gt;Biology and Chemistry. Business -&gt;Economics and Statistics. Excel in what matters for your goals.</span>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-title">How to Choose Your Courses</div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="background:rgba(74,222,128,.04);border:1px solid rgba(74,222,128,.12);border-radius:10px;padding:14px">
+<div style="font-weight:700;color:var(--text);font-size:15px;margin-bottom:5px">Take the hardest classes you can get a B or better in</div>
+<div style="font-size:14px;color:var(--muted)">An A in standard is worth less than a B in AP. But a C in AP is not better than an A in Honors. Know your limits.</div>
+</div>
+<div style="background:rgba(74,222,128,.04);border:1px solid rgba(74,222,128,.12);border-radius:10px;padding:14px">
+<div style="font-weight:700;color:var(--text);font-size:15px;margin-bottom:5px">Align classes with your intended major</div>
+<div style="font-size:14px;color:var(--muted)">Pre-med -&gt;AP Bio and AP Chem. Engineering -&gt;AP Physics and AP Calc. Business -&gt;AP Econ and AP Stats. Match your schedule to your goals.</div>
+</div>
+<div style="background:rgba(74,222,128,.04);border:1px solid rgba(74,222,128,.12);border-radius:10px;padding:14px">
+<div style="font-weight:700;color:var(--text);font-size:15px;margin-bottom:5px">Quality over quantity</div>
+<div style="font-size:14px;color:var(--muted)">7 AP classes with B's and C's is worse than 4 with A's. Burnout hurts your GPA, mental health, and extracurriculars all at once.</div>
+</div>
+<div style="background:rgba(248,113,113,.04);border:1px solid rgba(248,113,113,.12);border-radius:10px;padding:14px">
+<div style="font-weight:700;color:var(--text);font-size:15px;margin-bottom:5px">Don't take only easy classes to protect GPA</div>
+<div style="font-size:14px;color:var(--muted)">A 4.0 with no AP or Honors sends a red flag to selective colleges. They see your full course list - ease is noticed.</div>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-title">Sample 4-Year Course Plans</div>
+<p style="color:var(--muted);font-size:15px;margin-bottom:14px">General templates - talk to your counselor before finalizing. Your school may not offer all courses listed.</p>
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="border:1px solid rgba(59,130,246,.2);border-radius:12px;overflow:hidden">
+<div style="background:rgba(59,130,246,.08);padding:12px 16px;font-family:'Playfair Display',serif;font-weight:700;font-size:15px;color:var(--text)">STEM Track (Engineering / Pre-Med)</div>
+<div style="padding:14px 16px;display:grid;grid-template-columns:55px 1fr;gap:7px;font-size:13px">
+<div style="color:var(--purple);font-weight:700">9th</div><div style="color:var(--muted)">Algebra II or Pre-Calc, Biology, English 9, World History, PE/Elective</div>
+<div style="color:var(--purple);font-weight:700">10th</div><div style="color:var(--muted)">Honors Pre-Calc or AP Calc AB, Honors Chemistry, English 10, AP World History</div>
+<div style="color:var(--purple);font-weight:700">11th</div><div style="color:var(--muted)">AP Calculus BC, AP Physics, AP English Language, AP US History</div>
+<div style="color:var(--purple);font-weight:700">12th</div><div style="color:var(--muted)">AP Statistics, AP Biology/Chemistry, AP English Literature, AP Gov/Economics</div>
+</div>
+</div>
+<div style="border:1px solid rgba(99,102,241,.2);border-radius:12px;overflow:hidden">
+<div style="background:rgba(99,102,241,.08);padding:12px 16px;font-family:'Playfair Display',serif;font-weight:700;font-size:15px;color:var(--text)">Humanities Track (Law / Liberal Arts)</div>
+<div style="padding:14px 16px;display:grid;grid-template-columns:55px 1fr;gap:7px;font-size:13px">
+<div style="color:var(--purple);font-weight:700">9th</div><div style="color:var(--muted)">Algebra II, Biology, Honors English 9, World History, Foreign Language</div>
+<div style="color:var(--purple);font-weight:700">10th</div><div style="color:var(--muted)">Honors Math, AP Human Geography, AP English Language, Foreign Language II</div>
+<div style="color:var(--purple);font-weight:700">11th</div><div style="color:var(--muted)">AP Statistics, AP US History, AP English Literature, AP Spanish/French</div>
+<div style="color:var(--purple);font-weight:700">12th</div><div style="color:var(--muted)">AP Government, AP Economics, AP Language, Senior English</div>
+</div>
+</div>
+<div style="border:1px solid rgba(74,222,128,.15);border-radius:12px;overflow:hidden">
+<div style="background:rgba(74,222,128,.06);padding:12px 16px;font-family:'Playfair Display',serif;font-weight:700;font-size:15px;color:var(--text)">Balanced Track (Undecided / New Students)</div>
+<div style="padding:14px 16px;display:grid;grid-template-columns:55px 1fr;gap:7px;font-size:13px">
+<div style="color:var(--purple);font-weight:700">9th</div><div style="color:var(--muted)">Algebra I or II, Earth Science, English 9, World History, PE/Health</div>
+<div style="color:var(--purple);font-weight:700">10th</div><div style="color:var(--muted)">Geometry or Algebra II, Biology, Honors English 10, AP World History</div>
+<div style="color:var(--purple);font-weight:700">11th</div><div style="color:var(--muted)">Honors Pre-Calc, Honors Chemistry, AP Language, AP US History</div>
+<div style="color:var(--purple);font-weight:700">12th</div><div style="color:var(--muted)">AP Statistics or Pre-Calc, AP Gov, AP Literature, Dual Enrollment option</div>
+</div>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-title">Class Rank - Does It Matter?</div>
+<p style="color:var(--muted);font-size:16px;line-height:1.75;margin-bottom:12px"><strong style="color:var(--text)">Class rank</strong>is your position relative to other students in your graduating class by GPA. Ranked 15th out of 400 = top 4%.</p>
+<div style="display:flex;flex-direction:column;gap:8px;font-size:15px;color:var(--muted)">
+<div style="padding:10px 14px;background:rgba(255,255,255,.02);border-radius:8px"> <strong style="color:var(--text)">Not all schools report it.</strong>Many have stopped because it can be discouraging. If your school doesn't rank, colleges don't penalize you.</div>
+<div style="padding:10px 14px;background:rgba(255,255,255,.02);border-radius:8px"> <strong style="color:var(--text)">Top 10% matters for some programs.</strong>UT Austin's Texas Top 10% rule admits students based purely on rank. Know if this applies to you.</div>
+<div style="padding:10px 14px;background:rgba(255,255,255,.02);border-radius:8px"> <strong style="color:var(--text)">Weighted rank is common.</strong>Taking AP classes can boost your rank even if your unweighted GPA isn't perfect.</div>
+</div>
+</div>
+<div style="display:flex;gap:10px;padding-bottom:20px">
+<button class="btn-outline" onclick="openToolPage('s-school','nav-school')" style="flex:1">&lt;- School System</button>
+<button class="btn full" onclick="openToolPage('s-college','nav-college')" style="flex:1">Next: University Selection -&gt;</button>
+</div>
+</div>
+</div>
+
+<!-- TIMELINE -->
+<div class="sec" id="s-timeline" style="padding:0;max-width:100%;padding-left:0;padding-right:0">
+<div id="timeline-root"></div>
+</div>
+<!-- SCHOOL SYSTEM PAGE -->
+<!-- RESET CONFIRMATION MODAL -->
+</div><!-- fix -->
+
+
+
+
+
+
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+     WRITING PRACTICE HUB
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<div class="sec" id="s-writing" style="padding-top:26px">
+<div class="bc-page-head" style="margin-bottom:20px">
+<div aria-hidden="true" class="bc-grid-bg"></div>
+<div class="bc-page-head-inner">
+<div>
+<span class="bc-label">Writing practice</span>
+<h1>Write &amp;<br/><em>Get Graded.</em></h1>
+<p class="bc-page-sub">Practice DBQ, SAQ, and LEQ essays against the official College Board rubric. AI grades your response in seconds - with per-criterion scores, weakness highlighting, and annotated feedback.</p>
+<div class="bc-page-meta">
+<span class="bc-pill">Official rubric</span>
+<span class="bc-pill">AI graded</span>
+<span class="bc-pill">16 prompts</span>
+</div>
+</div>
+</div>
+</div>
+<!-- DBQ Card -->
+<div class="card" onclick="show('s-dbq');setNav('nav-writing')" onmouseenter="this.style.transform='translateY(-3px)';this.style.borderColor='rgba(167,139,250,.4)'" onmouseleave="this.style.transform='';this.style.borderColor=''" style="cursor:pointer;transition:transform .18s,border-color .18s">
+<div style="display:flex;align-items:center;gap:18px">
+<div style="width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,rgba(99,102,241,.25),rgba(139,92,246,.15));border:1.5px solid rgba(167,139,250,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+<span style="font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:#a78bfa">DBQ</span>
+</div>
+<div style="flex:1">
+<div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--text);margin-bottom:4px">Document Based Question</div>
+<div style="font-size:13px;color:var(--muted);line-height:1.5">Analyze 7 primary source documents and write an evidence-based argument. 3 prompts covering Periods 3-7.</div>
+<div style="display:flex;gap:8px;margin-top:8px">
+<span style="background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.25);border-radius:20px;padding:3px 10px;font-size:11px;color:#a78bfa;letter-spacing:.5px">7 POINTS</span>
+<span style="background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.25);border-radius:20px;padding:3px 10px;font-size:11px;color:#a78bfa;letter-spacing:.5px">3 PROMPTS</span>
+<span style="background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.25);border-radius:20px;padding:3px 10px;font-size:11px;color:#a78bfa;letter-spacing:.5px">DOCS PROVIDED</span>
+</div>
+</div>
+<div style="color:var(--muted);font-size:20px;flex-shrink:0">-></div>
+</div>
+</div>
+<!-- SAQ Card -->
+<div class="card" onclick="show('s-saq');setNav('nav-writing')" onmouseenter="this.style.transform='translateY(-3px)';this.style.borderColor='rgba(59,130,246,.4)'" onmouseleave="this.style.transform='';this.style.borderColor=''" style="cursor:pointer;transition:transform .18s,border-color .18s">
+<div style="display:flex;align-items:center;gap:18px">
+<div style="width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,rgba(59,130,246,.2),rgba(99,102,241,.1));border:1.5px solid rgba(59,130,246,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+<span style="font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:var(--purple)">SAQ</span>
+</div>
+<div style="flex:1">
+<div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--text);margin-bottom:4px">Short Answer Question</div>
+<div style="font-size:13px;color:var(--muted);line-height:1.5">Answer 3 parts (A, B, C) with specific claims and historical evidence. No thesis required. 10 prompts across all 9 periods.</div>
+<div style="display:flex;gap:8px;margin-top:8px">
+<span style="background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.22);border-radius:20px;padding:3px 10px;font-size:11px;color:var(--purple);letter-spacing:.5px">3 POINTS</span>
+<span style="background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.22);border-radius:20px;padding:3px 10px;font-size:11px;color:var(--purple);letter-spacing:.5px">10 PROMPTS</span>
+<span style="background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.22);border-radius:20px;padding:3px 10px;font-size:11px;color:var(--purple);letter-spacing:.5px">ALL PERIODS</span>
+</div>
+</div>
+<div style="color:var(--muted);font-size:20px;flex-shrink:0">-></div>
+</div>
+</div>
+<!-- LEQ Card -->
+<div class="card" onclick="show('s-leq');setNav('nav-writing')" onmouseenter="this.style.transform='translateY(-3px)';this.style.borderColor='rgba(52,211,153,.4)'" onmouseleave="this.style.transform='';this.style.borderColor=''" style="cursor:pointer;transition:transform .18s,border-color .18s">
+<div style="display:flex;align-items:center;gap:18px">
+<div style="width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,rgba(52,211,153,.15),rgba(59,130,246,.1));border:1.5px solid rgba(52,211,153,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+<span style="font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:#34d399">LEQ</span>
+</div>
+<div style="flex:1">
+<div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--text);margin-bottom:4px">Long Essay Question</div>
+<div style="font-size:13px;color:var(--muted);line-height:1.5">Write a full analytical essay from memory - no documents provided. Demonstrate thesis, context, evidence, and reasoning. 3 prompts across Periods 3-7.</div>
+<div style="display:flex;gap:8px;margin-top:8px">
+<span style="background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.22);border-radius:20px;padding:3px 10px;font-size:11px;color:#34d399;letter-spacing:.5px">6 POINTS</span>
+<span style="background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.22);border-radius:20px;padding:3px 10px;font-size:11px;color:#34d399;letter-spacing:.5px">3 PROMPTS</span>
+<span style="background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.22);border-radius:20px;padding:3px 10px;font-size:11px;color:#34d399;letter-spacing:.5px">NO DOCS NEEDED</span>
+</div>
+</div>
+<div style="color:var(--muted);font-size:20px;flex-shrink:0">-></div>
+</div>
+</div>
+<!-- Rubric reference -->
+<div class="card" style="background:rgba(255,255,255,.02)">
+<div class="card-title" style="font-size:14px">AP Rubric Quick Reference</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;font-size:13px">
+<div>
+<div style="color:#a78bfa;font-weight:600;margin-bottom:6px">DBQ - 7 pts</div>
+<div style="color:var(--muted);line-height:1.7">Thesis (1)<br/>Contextualization (1)<br/>Evidence 3 docs (1)<br/>Evidence 6 docs (1)<br/>Beyond docs (1)<br/>Sourcing/HAPP (1)<br/>Complexity (1)</div>
+</div>
+<div>
+<div style="color:var(--purple);font-weight:600;margin-bottom:6px">SAQ - 3 pts</div>
+<div style="color:var(--muted);line-height:1.7">Part A (1)<br/>Part B (1)<br/>Part C (1)<br/><br/>Each part: state a specific claim + support with evidence. No thesis needed.</div>
+</div>
+<div>
+<div style="color:#34d399;font-weight:600;margin-bottom:6px">LEQ - 6 pts</div>
+<div style="color:var(--muted);line-height:1.7">Thesis (1)<br/>Contextualization (1)<br/>Evidence examples (1)<br/>Evidence argument (1)<br/>Reasoning skill (1)<br/>Complexity (1)</div>
+</div>
+</div>
+</div>
+<div style="padding-bottom:28px"></div>
+</div>
+<div class="sec" id="s-dbq" style="padding-top:26px">
+<div class="bc-page-head" style="margin-bottom:20px">
+<div aria-hidden="true" class="bc-grid-bg"></div>
+<div class="bc-page-head-inner">
+<div>
+<span class="bc-label">APUSH DBQ</span>
+<h1>Document<br/><em>Based Q.</em></h1>
+<p class="bc-page-sub">7-point rubric · Thesis · Contextualization · Evidence · Sourcing · Complexity. Graded by AI against the official College Board rubric.</p>
+<div class="bc-page-meta">
+<span class="bc-pill">7 points</span>
+<span class="bc-pill">3 prompts</span>
+<span class="bc-pill">AI graded</span>
+</div>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-title">Select a Prompt</div>
+<div class="essay-sel-grid">
+<button class="essay-q-btn sel" data-idx="0" onclick="selectDBQ(this,0)">Prompt 1<br/><span style="font-size:11px;color:var(--muted)">Seven Years' War<br/>c. 1754-1776</span></button>
+<button class="essay-q-btn" data-idx="1" onclick="selectDBQ(this,1)">Prompt 2<br/><span style="font-size:11px;color:var(--muted)">Market Economy<br/>c. 1800-1860</span></button>
+<button class="essay-q-btn" data-idx="2" onclick="selectDBQ(this,2)">Prompt 3<br/><span style="font-size:11px;color:var(--muted)">Progressive Era<br/>c. 1890-1920</span></button>
+</div>
+</div>
+<div class="card" id="dbq-prompt-card">
+<div class="card-title" id="dbq-prompt-title">DBQ Prompt</div>
+<div id="dbq-prompt-text" style="font-size:16px;line-height:1.7;color:var(--text);margin-bottom:18px;padding:14px;background:rgba(99,102,241,.06);border-radius:8px;border-left:3px solid rgba(99,102,241,.5)"></div>
+<div class="card-title" style="margin-top:4px">Source Documents</div>
+<div id="dbq-docs"></div>
+</div>
+<div class="card">
+<div class="card-title">Your Response</div>
+<p style="font-size:13px;color:var(--muted);margin-bottom:12px">Write your full DBQ essay below. Reference documents by their label (Doc 1, Doc 2, etc.). Aim for a clear thesis, contextualization, and document analysis.</p>
+<textarea class="essay-textarea" id="dbq-textarea" placeholder="Write your DBQ essay here...
+
+Tip: Start with your thesis in the introduction. For each body paragraph, cite at least 2 documents and include sourcing (HAPP). End with contextualization and a complexity move."></textarea>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
+<span id="dbq-wc" style="font-size:12px;color:var(--muted)">0 words</span>
+<span style="font-size:12px;color:var(--muted)">Recommended: 600-900 words</span>
+</div>
+<button class="essay-grade-btn" id="dbq-grade-btn" onclick="gradeDBQ()">Grade with AP Rubric -></button>
+</div>
+<div id="dbq-results" style="display:none">
+<div class="card" style="text-align:center;background:linear-gradient(135deg,rgba(79,70,229,.08),rgba(59,130,246,.06))">
+<div class="card-title">Your Score</div>
+<div class="score-ring" id="dbq-score-ring">
+<svg height="90" viewbox="0 0 90 90" width="90">
+<circle cx="45" cy="45" fill="none" r="38" stroke="rgba(59,130,246,.12)" stroke-width="8"></circle>
+<circle cx="45" cy="45" fill="none" id="dbq-arc" r="38" stroke="url(#dbq-grad)" stroke-linecap="round" stroke-width="8" style="transition:stroke-dashoffset 1s ease"></circle>
+<defs><lineargradient id="dbq-grad" x1="0%" x2="100%" y1="0%" y2="0%"><stop offset="0%" stop-color="#4f46e5"></stop><stop offset="100%" stop-color="#3b82f6"></stop></lineargradient></defs>
+</svg>
+<div class="score-ring-num" id="dbq-score-num" style="color:var(--purple)">-</div>
+</div>
+<div id="dbq-score-label" style="font-size:14px;color:var(--muted)">out of 7 points</div>
+<div id="dbq-verdict" style="margin-top:12px;font-size:15px;color:var(--text);font-style:italic"></div>
+</div>
+<div class="card" id="dbq-rubric-card">
+<div class="card-title">Rubric Breakdown</div>
+<div id="dbq-rubric-rows"></div>
+</div>
+<div class="card" id="dbq-feedback-card">
+<div class="card-title">Strengths &amp; Weaknesses</div>
+<div style="margin-bottom:10px">
+<div style="font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#4ade80;margin-bottom:6px">Strengths</div>
+<div id="dbq-strengths"></div>
+</div>
+<div>
+<div style="font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#f87171;margin-bottom:6px">Areas to Improve</div>
+<div id="dbq-weaknesses"></div>
+</div>
+</div>
+<div class="card">
+<div class="card-title">Annotated Response</div>
+<p style="font-size:13px;color:var(--muted);margin-bottom:10px"><span style="background:rgba(34,197,94,.15);color:#86efac;padding:2px 7px;border-radius:3px;font-size:12px">green</span> = strong    <span style="background:rgba(239,68,68,.18);color:#fca5a5;padding:2px 7px;border-radius:3px;font-size:12px">red</span> = needs work</p>
+<div class="response-annotated" id="dbq-annotated"></div>
+</div>
+<div style="display:flex;gap:10px;padding-bottom:28px">
+<button class="btn-outline" onclick="resetDBQ()" style="flex:1">Try Again</button>
+<button class="btn" onclick="show('s-writing');setNav('nav-writing')" style="flex:1">Back to Writing Practice -></button>
+</div>
+</div>
+</div>
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+     SAQ SECTION
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<div class="sec" id="s-saq" style="padding-top:26px">
+<div class="bc-page-head" style="margin-bottom:20px">
+<div aria-hidden="true" class="bc-grid-bg"></div>
+<div class="bc-page-head-inner">
+<div>
+<span class="bc-label">APUSH SAQ</span>
+<h1>Short<br/><em>Answer Q.</em></h1>
+<p class="bc-page-sub">3-point rubric · Each part worth 1 point. Requires a specific claim supported by accurate historical evidence. No thesis needed.</p>
+<div class="bc-page-meta">
+<span class="bc-pill">3 points</span>
+<span class="bc-pill">10 prompts</span>
+<span class="bc-pill">AI graded</span>
+</div>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-title">Select a Question</div>
+<div id="saq-selector" style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px"></div>
+<div id="saq-period-label" style="margin-top:6px;font-size:12px;color:var(--muted);text-align:center"></div>
+</div>
+<div class="card" id="saq-question-card">
+<div class="card-title" id="saq-q-title">SAQ Question</div>
+<div id="saq-stimulus" style="display:none;margin-bottom:16px"></div>
+<div id="saq-parts"></div>
+<button class="essay-grade-btn" id="saq-grade-btn" onclick="gradeSAQ()">Grade with AP Rubric -></button>
+</div>
+<div id="saq-results" style="display:none">
+<div class="card" style="text-align:center;background:linear-gradient(135deg,rgba(59,130,246,.07),rgba(99,102,241,.05))">
+<div class="card-title">Your Score</div>
+<div class="score-ring" id="saq-score-ring">
+<svg height="90" viewbox="0 0 90 90" width="90">
+<circle cx="45" cy="45" fill="none" r="38" stroke="rgba(59,130,246,.12)" stroke-width="8"></circle>
+<circle cx="45" cy="45" fill="none" id="saq-arc" r="38" stroke="url(#saq-grad)" stroke-linecap="round" stroke-width="8"></circle>
+<defs><lineargradient id="saq-grad" x1="0%" x2="100%" y1="0%" y2="0%"><stop offset="0%" stop-color="#3b82f6"></stop><stop offset="100%" stop-color="#6366f1"></stop></lineargradient></defs>
+</svg>
+<div class="score-ring-num" id="saq-score-num" style="color:var(--purple)">-</div>
+</div>
+<div style="font-size:14px;color:var(--muted)">out of 3 points</div>
+<div id="saq-verdict" style="margin-top:12px;font-size:15px;color:var(--text);font-style:italic"></div>
+</div>
+<div class="card">
+<div class="card-title">Part-by-Part Feedback</div>
+<div id="saq-rubric-rows"></div>
+</div>
+<div class="card">
+<div class="card-title">Strengths &amp; Weaknesses</div>
+<div style="margin-bottom:10px">
+<div style="font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#4ade80;margin-bottom:6px">Strengths</div>
+<div id="saq-strengths"></div>
+</div>
+<div>
+<div style="font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#f87171;margin-bottom:6px">Areas to Improve</div>
+<div id="saq-weaknesses"></div>
+</div>
+</div>
+<div style="display:flex;gap:10px;padding-bottom:28px">
+<button class="btn-outline" onclick="resetSAQ()" style="flex:1">Try Again</button>
+<button class="btn" onclick="show('s-writing');setNav('nav-writing')" style="flex:1">Back to Writing Practice -></button>
+</div>
+</div>
+</div>
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+     LEQ SECTION
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<div class="sec" id="s-leq" style="padding-top:26px">
+<div class="bc-page-head" style="margin-bottom:20px">
+<div aria-hidden="true" class="bc-grid-bg"></div>
+<div class="bc-page-head-inner">
+<div>
+<span class="bc-label">APUSH LEQ</span>
+<h1>Long<br/><em>Essay Q.</em></h1>
+<p class="bc-page-sub">6-point rubric · Thesis · Contextualization · Evidence · Historical Reasoning · Complexity. No documents provided.</p>
+<div class="bc-page-meta">
+<span class="bc-pill">6 points</span>
+<span class="bc-pill">3 prompts</span>
+<span class="bc-pill">AI graded</span>
+</div>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-title">Select a Prompt</div>
+<div class="essay-sel-grid">
+<button class="essay-q-btn sel" data-idx="0" onclick="selectLEQ(this,0)">Prompt 1<br/><span style="font-size:11px;color:var(--muted)">American Revolution<br/>c. 1763-1800</span></button>
+<button class="essay-q-btn" data-idx="1" onclick="selectLEQ(this,1)">Prompt 2<br/><span style="font-size:11px;color:var(--muted)">Manifest Destiny<br/>c. 1830-1860</span></button>
+<button class="essay-q-btn" data-idx="2" onclick="selectLEQ(this,2)">Prompt 3<br/><span style="font-size:11px;color:var(--muted)">New Deal<br/>c. 1929-1941</span></button>
+</div>
+</div>
+<div class="card">
+<div class="card-title" id="leq-prompt-title">LEQ Prompt</div>
+<div id="leq-prompt-text" style="font-size:16px;line-height:1.7;color:var(--text);padding:14px;background:rgba(52,211,153,.04);border-radius:8px;border-left:3px solid rgba(52,211,153,.4)"></div>
+<div style="margin-top:12px;padding:12px;background:rgba(255,255,255,.02);border-radius:8px;font-size:13px;color:var(--muted)">
+<strong style="color:rgba(232,237,245,.6)">Rubric reminder:</strong> You must write a thesis with a line of reasoning, describe broader historical context (before/after/during the time frame), support your argument with specific evidence, use historical reasoning (causation, comparison, or CCOT), and optionally demonstrate complexity.
+    </div>
+</div>
+<div class="card">
+<div class="card-title">Your Response</div>
+<p style="font-size:13px;color:var(--muted);margin-bottom:12px">Write your full essay. No documents are provided - all evidence must come from your knowledge. Aim for 400-700 words.</p>
+<textarea class="essay-textarea" id="leq-textarea" placeholder="Write your LEQ essay here...
+
+Tip: Open with a 1-2 sentence contextualization, then your thesis. Use specific historical evidence in your body paragraphs. Conclude with a complexity move (e.g., qualification, turning point argument, or comparing to another era)."></textarea>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
+<span id="leq-wc" style="font-size:12px;color:var(--muted)">0 words</span>
+<span style="font-size:12px;color:var(--muted)">Recommended: 400-700 words</span>
+</div>
+<button class="essay-grade-btn" id="leq-grade-btn" onclick="gradeLEQ()">Grade with AP Rubric -></button>
+</div>
+<div id="leq-results" style="display:none">
+<div class="card" style="text-align:center;background:linear-gradient(135deg,rgba(52,211,153,.06),rgba(59,130,246,.04))">
+<div class="card-title">Your Score</div>
+<div class="score-ring">
+<svg height="90" viewbox="0 0 90 90" width="90">
+<circle cx="45" cy="45" fill="none" r="38" stroke="rgba(52,211,153,.12)" stroke-width="8"></circle>
+<circle cx="45" cy="45" fill="none" id="leq-arc" r="38" stroke="url(#leq-grad)" stroke-linecap="round" stroke-width="8"></circle>
+<defs><lineargradient id="leq-grad" x1="0%" x2="100%" y1="0%" y2="0%"><stop offset="0%" stop-color="#34d399"></stop><stop offset="100%" stop-color="#3b82f6"></stop></lineargradient></defs>
+</svg>
+<div class="score-ring-num" id="leq-score-num" style="color:#34d399">-</div>
+</div>
+<div style="font-size:14px;color:var(--muted)">out of 6 points</div>
+<div id="leq-verdict" style="margin-top:12px;font-size:15px;color:var(--text);font-style:italic"></div>
+</div>
+<div class="card">
+<div class="card-title">Rubric Breakdown</div>
+<div id="leq-rubric-rows"></div>
+</div>
+<div class="card">
+<div class="card-title">Strengths &amp; Weaknesses</div>
+<div style="margin-bottom:10px">
+<div style="font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#4ade80;margin-bottom:6px">Strengths</div>
+<div id="leq-strengths"></div>
+</div>
+<div>
+<div style="font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#f87171;margin-bottom:6px">Areas to Improve</div>
+<div id="leq-weaknesses"></div>
+</div>
+</div>
+<div class="card">
+<div class="card-title">Annotated Response</div>
+<p style="font-size:13px;color:var(--muted);margin-bottom:10px"><span style="background:rgba(34,197,94,.15);color:#86efac;padding:2px 7px;border-radius:3px;font-size:12px">green</span> = strong    <span style="background:rgba(239,68,68,.18);color:#fca5a5;padding:2px 7px;border-radius:3px;font-size:12px">red</span> = needs work</p>
+<div class="response-annotated" id="leq-annotated"></div>
+</div>
+<div style="display:flex;gap:10px;padding-bottom:28px">
+<button class="btn-outline" onclick="resetLEQ()" style="flex:1">Try Again</button>
+<button class="btn" onclick="show('s-writing');setNav('nav-writing')" style="flex:1">Back to Writing Practice -></button>
+</div>
+</div>
+</div>
+<script src="data/core-data.js"></script>
+<script src="js/01-core-app.js"></script>
+<script src="js/01-inline-01.js"></script>
+<script src="js/02-inline-02.js"></script>
+<script src="js/03-inline-03.js"></script>
+<script src="data/universities.js"></script>
+<script src="js/05-college-selection.js"></script>
+<script src="js/05-school-guide-nav-script.js"></script>
+<script src="js/06-school-guide-open-root-script.js"></script>
+<script src="js/07-student-compass-drills-box-interactions.js"></script>
+<script src="data/writing-prompts.js"></script>
+<script src="js/09-writing-practice.js"></script>
+<script src="js/09-student-compass-performance-stabilizer-script-2026.js"></script>
+<script src="js/10-student-profile-script.js"></script>
+<script src="js/11-student-compass-overhaul-2026.js"></script>
+<script src="js/12-student-compass-page-expansion-2026.js"></script>
+<script src="js/13-student-compass-text-sanitizer.js"></script>
+<script src="js/14-student-compass-command-center-2026.js"></script>
+<script src="js/15-student-compass-product-polish-2026.js"></script>
+<script src="js/16-question-bank-upgrade.js"></script>
+<script src="js/16-practice-test-launcher.js"></script>
+<script src="js/state.js"></script>
+<script src="js/register-sw.js"></script>
+<script src="js/17-menu-icon-stabilizer.js"></script>
+<script src="js/18-new-version-only.js"></script>
+<script src="js/19-top-nav-stabilizer.js"></script>
+<script src="js/20-command-center-tabs-polish.js"></script>
+<script src="js/21-learning-system-upgrade.js"></script>
+<script src="js/22-premium-study-tools.js"></script>
+<script src="js/23-product-utilities.js"></script>
+<script src="js/25-visual-functional-upgrade.js"></script>
+<script src="js/24-navigation-scroll-top.js"></script>
+</body>
+</html>
